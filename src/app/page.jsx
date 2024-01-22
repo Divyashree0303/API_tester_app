@@ -1,29 +1,46 @@
 "use client"
 import { useState } from 'react';
-import { useSession, signIn, signOut } from "next-auth/react"
 import "./styles.css";
 
 export default function Home(){
-  const { data: session } = useSession()
 
   const [requestType, setRequestType] = useState('GET');
   const [url, setUrl] = useState('');
   const [requestBody, setRequestBody] = useState('');
+  const [params, setParams] = useState([]);
   const [headers, setHeaders] = useState([]);
   const [response, setResponse] = useState({ status: null, data: null });
+  const [authType, setAuthType] = useState('None');
+  const [authCredentials, setAuthCredentials] = useState({ username: '', password: '' });
+  const [accessToken, setAccessToken] = useState('');
 
   const handleSendRequest = async () => {
     try {
+      let urlWithParams = new URL(url);
+
+      params.forEach(([key, value]) => {
+        if (!urlWithParams.searchParams.has(key)) {
+          urlWithParams.searchParams.append(key, value);
+        }
+      });
+
       const requestOptions = {
         method: requestType,
         headers: {
           'Content-Type': 'application/json',
-          ...Object.fromEntries(headers), // Convert headers array to an object
+          ...Object.fromEntries(headers),
         },
-        body: (requestType !== 'GET' && requestType !== 'DELETE' )? JSON.stringify(JSON.parse(requestBody)) : undefined,
+        body: (requestType !== 'GET' && requestType !== 'DELETE') ? JSON.stringify(JSON.parse(requestBody)) : undefined,
       };
 
-      const res = await fetch(url, requestOptions);
+      if (authType === 'Basic') {
+        const base64Credentials = btoa(`${authCredentials.username}:${authCredentials.password}`);
+        requestOptions.headers['Authorization'] = `Basic ${base64Credentials}`;
+      } else if (authType === 'OAuth2.0') {
+        requestOptions.headers['Authorization'] = `Bearer ${accessToken}`;
+      }
+
+      const res = await fetch(urlWithParams.toString(), requestOptions);
 
       const data = await res.json();
       setResponse({ status: res.status, data });
@@ -31,6 +48,11 @@ export default function Home(){
       console.error('Error sending request:', error);
       setResponse({ status: null, data: error.message });
     }
+  };
+
+
+  const handleAuthTypeChange = (e) => {
+    setAuthType(e.target.value);
   };
 
   const handleAddHeader = () => {
@@ -41,6 +63,28 @@ export default function Home(){
     const updatedHeaders = [...headers];
     updatedHeaders.splice(index, 1);
     setHeaders(updatedHeaders);
+  };
+
+  const handleRemoveParam = (index) => {
+    const updatedParams = [...params];
+    updatedParams.splice(index, 1);
+    setParams(updatedParams);
+  };
+
+  const handleAddParam = () => {
+    setParams([...params, ['', '']]);
+  };
+
+  const handleParamKeyChange = (index, key) => {
+    const updatedParams = [...params];
+    updatedParams[index][0] = key;
+    setParams(updatedParams);
+  };
+
+  const handleParamValueChange = (index, value) => {
+    const updatedParams = [...params];
+    updatedParams[index][1] = value;
+    setParams(updatedParams);
   };
 
   
@@ -63,7 +107,6 @@ export default function Home(){
 
 
 
-  if(session){
 
   return (
       <div className='container'>
@@ -81,6 +124,7 @@ export default function Home(){
             </select>
           </label>
           <br />
+
           <label className='label overflow' style={{width:"80%"}}>
             
             <input
@@ -91,6 +135,58 @@ export default function Home(){
               onChange={(e) => setUrl(e.target.value)}
             />
           </label>
+        </div>
+
+        <div className='authContainer'>
+          <label className='label'>
+            Authentication Type:
+            <select className='select' value={authType} onChange={handleAuthTypeChange}>
+              <option value='None'>None</option>
+              <option value='Basic'>Basic Auth</option>
+              <option value='OAuth2.0'>OAuth 2.0</option>
+            </select>
+          </label>
+
+          <br/>
+
+          {authType === 'Basic' && (
+            <div className='basicAuthContainer' >
+              <label className='label' style={{width:"50%"}}>
+                Username:
+                <input
+                  className='input'
+                  type='text'
+                  value={authCredentials.username}
+                  onChange={(e) => setAuthCredentials({ ...authCredentials, username: e.target.value })}
+                />
+              </label>
+              <label className='label' style={{width:"50%"}}>
+                Password:
+                <input
+                  className='input'
+                  type='password'
+                  value={authCredentials.password}
+                  onChange={(e) => setAuthCredentials({ ...authCredentials, password: e.target.value })}
+                />
+              </label>
+            </div>
+          )}
+
+          <br/>
+
+          {authType === 'OAuth2.0' && (
+            <div className='oauthContainer'>
+              <label className='label'>
+                Access Token:
+                <input
+                  className='input'
+                  type='text'
+                  value={accessToken}
+                  onChange={(e) => setAccessToken(e.target.value)}
+                />
+              </label>
+            </div>
+          )}
         </div>
          
           {(requestType !== 'GET' && requestType !== 'DELETE')&& (
@@ -105,8 +201,46 @@ export default function Home(){
                 />
               </label>
               <br />
-            </div>
-          )}
+            </div>)}
+
+    
+
+          <br/>
+
+          {params.length > 0 && (
+          <div className='headerContainer'>
+            <label className='label'>
+              Query Parameters:
+              {params.map((param, index) => (
+                <div key={index} className='headerRow'>
+                  <input
+                    className='input'
+                    type="text"
+                    placeholder="Key"
+                    value={param[0]}
+                    onChange={(e) => handleParamKeyChange(index, e.target.value)}
+                  />
+                  <input
+                    className='input'
+                    type="text"
+                    placeholder="Value"
+                    value={param[1]}
+                    onChange={(e) => handleParamValueChange(index, e.target.value)}
+                  />
+                  <button className='removeButton' type="button" onClick={() => handleRemoveParam(index)}>
+                    Remove
+                  </button>
+                </div>
+              ))}
+            </label>
+          </div>
+        )}
+
+        <button className='addButton' type="button" onClick={handleAddParam}>
+          Add Query Parameter
+        </button>
+
+        <br/>
           
           {headers.length > 0 && (
            <div className='headerContainer'> 
@@ -158,14 +292,4 @@ export default function Home(){
         <button className='SignOutButton' onClick={handleSignOut}>Sign Out</button>
       </div>
   );}
-
-  return (
-    <div className="signin-container">
-      <p className="not-signed-in-text">Not Signed In</p>
-      <button className="signin-button" onClick={() => signIn('github')}>
-        Sign in with GitHub
-      </button>
-    </div>
-)
-};
 
