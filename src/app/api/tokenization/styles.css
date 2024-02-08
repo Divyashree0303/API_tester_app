@@ -1,0 +1,177 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: sans-serif;
+  }
+
+  .navbar {
+    background: #f4f4f4;
+    border-bottom: 1px solid #AAAAAA;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; */
+}
+
+.navbar-left img {
+    width: 40px; /* Example width for the icon */
+    height: auto;
+}
+
+.navbar-right .login-button {
+    background-color:#0070ba; /* Example background color for the login button */
+    color: white; /* Example text color for the login button */
+    border: 2px solid #0070ba; /* Example border for the login button */
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.login-button:hover{
+    background-color: #0D1282;
+    border: 2px solid #0D1282;
+    cursor: pointer;
+}
+
+  .baseUrl {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: monospace;
+    font-weight:bold;
+  }
+
+  a{
+    text-decoration: none;
+    color: #0070ba;
+  }
+
+  a:hover{
+    color: darkblue;
+  }
+  
+  .baseUrl p {
+    margin: 0;
+  }
+
+  .endpoint {
+    background-color: rgba(73,204,144,.1);;
+    border: 1px solid #49cc90; /* Example border for the endpoint div */
+    border-radius: 5px;
+    position: relative;
+}
+
+.copyButtonURI {
+    color: 476072;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+    position: absolute;
+    right:5px;
+    top: 5px;
+  }
+
+  .copyButtonURI:hover{
+    color:#49cc90;
+  }
+
+.method {
+    background-color: #49cc90;; /* Example color for the method */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.details {
+    display: inline-block;
+    margin-left: 10px;
+    font-family: monospace;
+    font-weight:bold;
+    font-size:larger;
+}
+
+.details p {
+    margin: 0;
+}
+  
+  .endpoint, .description, .request, .response {
+    margin-bottom: 20px;
+  }
+
+  .codeSnippet {
+    /* background-color: #f5f5f5;
+    border: 1px solid #ccc; */
+    background-color: #000F28;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .code {
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-width: calc(100% - 20px);
+  }
+  
+  .copyButton {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+    position: absolute;
+    right:5px;
+    top: 5px;
+  }
+
+  .copyButtonUrl {
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+    position: absolute;
+    right:5px;
+    top: 5px;
+  }
+  
+  .copyButtonUrl:hover{
+    color: #0070ba;
+  }
+
+  .copyButton:hover{
+    color: #0070ba;
+  }
+  
+  .authGuide {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .authGuide ol {
+    margin-left: 20px;
+  }
+
+  
