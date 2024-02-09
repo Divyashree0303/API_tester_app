@@ -32,7 +32,7 @@ export default function ApiDocsPage() {
 
             <div className="container">
 
-                <h1>Open Banking API Documentation</h1>
+                <h1>Global Banking API Documentation</h1>
 
                 <h2>Tokenization API</h2>
 
@@ -46,7 +46,7 @@ export default function ApiDocsPage() {
                 <h3>Base URL</h3>
                 <div className="baseUrl">
                     <FontAwesomeIcon icon={faCopy} className="copyButtonUrl" onClick={() => handleCopy("https://api.fintractglobal.com/tokenization")} />
-                    <p>https://api.fintractglobal.com/tokenization</p>
+                    <p>https://api.globalbanking.fintractglobal.com/</p>
                 </div>
 
                 {/* Tokenize API section */}
@@ -66,7 +66,7 @@ export default function ApiDocsPage() {
 
 
                     <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`{
-  "key": "d5230b58-9340-48e8-a024-197016fdc392",
+  "key": "d5200b58-9340-48e8-a024-197016fdc492",
   "data": {
     "card_number":"3463-3454-5656-9857"
   }
@@ -74,7 +74,7 @@ export default function ApiDocsPage() {
 
                     <pre className="code">
                         {`{
-  "key": "d5230b58-9340-48e8-a024-197016fdc392",
+  "key": "d5200b58-9340-48e8-a024-197016fdc492",
   "data": {
     "card_number":"3463-3454-5656-9857"
   }
@@ -90,7 +90,7 @@ export default function ApiDocsPage() {
 
                     <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`{
   "token": {
-    "value": "cb95abdf-6a4f-49c9-841e-7c761ea534ed",
+    "value": "cb95abdf-6a4f-48c9-841e-7c761ea534ed",
     "expiry_date": "2024-02-13"
   }
 }`)} />
@@ -98,7 +98,7 @@ export default function ApiDocsPage() {
                     <pre className="code">
                         {`{
   "token": {
-    "value": "cb95abdf-6a4f-49c9-841e-7c761ea534ed",
+    "value": "cb95abdf-6a4f-48c9-841e-7c761ea534ed",
     "expiry_date": "2024-02-13"
   }
 }`}
@@ -121,14 +121,14 @@ export default function ApiDocsPage() {
                 <div className="codeSnippet">
 
                     <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`{
-  "token": "cb95abdf-6a4f-49c9-841e-7c761ea534ed",
-  "key": "d5230b58-9340-48e8-a024-197016fdc392"
+  "token": "cb95abdf-6a4f-48c9-841e-7c761ea534ed",
+  "key": "d5200b58-9340-48e8-a024-197016fdc492"
 }`)} />
 
                     <pre className="code">
                         {`{
-  "token": "cb95abdf-6a4f-49c9-841e-7c761ea534ed",
-  "key": "d5230b58-9340-48e8-a024-197016fdc392"
+  "token": "cb95abdf-6a4f-48c9-841e-7c761ea534ed",
+  "key": "d5200b58-9340-48e8-a024-197016fdc492"
 }`}
                     </pre>
                 </div>
