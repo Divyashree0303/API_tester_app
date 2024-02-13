@@ -19,20 +19,8 @@ export default function ApiDocsPage() {
 
         <div >
 
-            <div className="navbar">
-                <div className="navbar-left">
-                    <img src="/FG_logo.png" alt="Icon" />
-                </div>
-                <div className="navbar-right">
-                    <button className="login-button"><Link href="https://globalbanking.fintractglobal.com/signin" style={{color:"white"}}>Login</Link></button>
-                </div>
-            </div>
 
-
-
-            <div className="container">
-
-                <h1>Global Banking API Documentation</h1>
+            <div className="tokenization-container">
 
                 <h2>Tokenization API</h2>
 
@@ -40,7 +28,7 @@ export default function ApiDocsPage() {
 
                 {/* Authentication section */}
                 <h3>Authentication</h3>
-                <p>Before using the Tokenization API, ensure you have the necessary credentials. Refer to the <Link href="#authGuide">Authentication Guide</Link> for details on obtaining and using API keys.</p>
+                <p>Before using the Tokenization API, ensure you have the necessary credentials. Refer to the <Link href="/developer/globalBanking/docs/authGuide">Authentication Guide</Link> for details on obtaining and using API keys.</p>
 
                 {/* Base URL section */}
                 <h3>Base URL</h3>
@@ -50,6 +38,7 @@ export default function ApiDocsPage() {
                 </div>
 
                 {/* Tokenize API section */}
+                <div id="tokenize" className="section">
                 <h3>1. Tokenize</h3>
                 <p>Tokenize sensitive information to enhance security during data storage and transmission.</p>
 
@@ -104,14 +93,16 @@ export default function ApiDocsPage() {
 }`}
                     </pre>
                 </div>
+                </div>
 
                 {/* Detokenize API section */}
+                <div id="detokenize" className="section">
                 <h3>2. Detokenize</h3>
                 <p>Detokenize a token to retrieve the original sensitive information.</p>
 
                 <h4>Endpoint</h4>
                 <div className="endpoint">
-                    <div className="method">POST</div>
+                    <div className="method post">POST</div>
                     <p className="details"> /tokenization/detokenize</p>
                     <FontAwesomeIcon icon={faCopy} className="copyButtonURI" onClick={() => handleCopy("/tokenization/detokenize")} />
                 </div>
@@ -163,15 +154,6 @@ export default function ApiDocsPage() {
                     </pre>
                 </div>
 
-                {/* Authentication Guide section */}
-                <div id="authGuide" className="authGuide">
-                    <h2>Authentication Guide</h2>
-                    <p>To access the Tokenization API, you need to authenticate using an API key. Follow these steps to obtain your API key:</p>
-                    <ol>
-                        <li>Sign Up/Log In: <Link href="https://globalbanking.fintractglobal.com/">Create an account or log in</Link> to your Fintract Global account.</li>
-                        <li>Navigate to API Keys tab</li>
-                        <li>Generate API Key: Generate a new API key and keep it secure.</li>
-                    </ol>
                 </div>
             </div>
         </div>

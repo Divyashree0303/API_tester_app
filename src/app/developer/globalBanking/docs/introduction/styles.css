@@ -1,0 +1,23 @@
+/* styles/Introduction.module.css */
+
+.intro-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: sans-serif;
+  }
+  
+  .intro-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .intro-content {
+    line-height: 1.6;
+  }
+  
+  .intro-content p {
+    margin-bottom: 15px;
+  }
+  

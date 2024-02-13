@@ -1,0 +1,60 @@
+/* styles/AuthenticationGuide.module.css */
+
+.auth-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .auth-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px 0;
+  }
+  
+  .auth-steps {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .auth-steps li {
+    margin-bottom: 40px;
+  }
+  
+  .auth-steps h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .auth-steps p {
+    margin-bottom: 10px;
+  }
+  
+  .auth-steps ul {
+    padding-left: 20px;
+  }
+  
+  .auth-steps ul li {
+    margin-bottom: 5px;
+  }
+  
+
+  .auth-code {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .auth-link{
+    text-decoration: none;
+    color: #0070ba;
+  }
+  
+  .auth-link:hover {
+    color: darkblue;
+  }
+
+
