@@ -75,7 +75,7 @@ export default function Layout({ children }) {
 
                         </div>
                         <ul>
-                        <li><Link href="/developer/globalBanking/docs">Global Banking</Link></li>
+                        <li><Link href="/developer/globalBanking/docs/introduction">Global Banking</Link></li>
                         <li><Link href="#">Product 2</Link></li>
                         <li><Link href="#">Product 3</Link></li>
                     </ul>
