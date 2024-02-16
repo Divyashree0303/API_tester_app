@@ -49,6 +49,7 @@ function Sidebar({ toggleDropdown, dropdowns, handleClick, clicked }) {
     return (
         <div className="sidebar">
             <ul className="sidebarList">
+                <li className='bold'>Global Banking</li>
                 <li><Link href="/developer/globalBanking/docs/introduction" onClick={() => handleClick('introduction')} className={clicked['introduction'] ? `clicked` : ``} >Introduction</Link></li>
                 <li><Link href="/developer/globalBanking/docs/authGuide" onClick={() => handleClick('authGuide')} className={clicked['authGuide'] ? `clicked` : ``}>Authentication Guide</Link></li>
                 <li><Link href="/developer/globalBanking/docs/overview" onClick={() => handleClick('overview')} className={clicked['overview'] ? `clicked` : ``}>Overview</Link></li>
@@ -75,6 +76,7 @@ function Sidebar({ toggleDropdown, dropdowns, handleClick, clicked }) {
                     </ul>
                 </li>
                 {/* Add more headings with dropdowns as needed */}
+                <li><Link href="/" target="_blank" className='bold'>API Testing</Link></li>
             </ul>
         </div>
     );
