@@ -1,34 +1,18 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faCaretDown, faCaretUp,  } from '@fortawesome/free-solid-svg-icons';
-import {faRectangleList} from '@fortawesome/free-regular-svg-icons';
+import { faXmark, faArrowRight, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import "./styles.css";
 
 
-export default function Layout({ children }) {
+
+export default function Sidebar_OG() {
 
     const [dropdowns, setDropdowns] = useState({});
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [clicked, setClicked] = useState({})
-
-    useEffect(() => {
-      const handleWindowResize = () => {
-        if(window.innerWidth>768){
-            setSidebarOpen(true);
-        }else{
-            setSidebarOpen(false);
-        }
-      };
-  
-      window.addEventListener('resize', handleWindowResize);
-  
-      return () => {
-        window.removeEventListener('resize', handleWindowResize);
-      };
-    });
 
 
     const toggleSidebarRight = () => {
@@ -58,20 +42,14 @@ export default function Layout({ children }) {
             return newState;
         });
 
-        if(window.innerWidth<=768){
-            setSidebarOpen(false);
-        }
-
     };
 
     return (
         <div className={sidebarOpen ? `sub-container` : `sub-container collapsed`}>
             {sidebarOpen && <Sidebar toggleDropdown={toggleDropdown} dropdowns={dropdowns} toggleSidebarLeft={toggleSidebarLeft} handleClick={handleClick} clicked={clicked} />}
-            {!sidebarOpen && <FontAwesomeIcon icon={faRectangleList} className="toggleButton toggleButtonLeft " onClick={toggleSidebarRight} />}
+            {!sidebarOpen && <FontAwesomeIcon icon={faArrowRight} className="toggleButton toggleButtonLeft " onClick={toggleSidebarRight} />}
 
-            <main className="sub-main">{children}</main>
         </div>
-    
     );
 }
 

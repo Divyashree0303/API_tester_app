@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
@@ -33,7 +33,7 @@ export default function Layout({ children }) {
             <nav className="navbar">
                 <div className="navbarLeft">
                     <Link href="/">
-                        <img src="/FG_logo.png" alt="Logo" />
+                        <img src="/FG_logo.jpeg" alt="Logo" />
                     </Link>
                 </div>
                 <div className="navbarRight">
@@ -66,7 +66,7 @@ export default function Layout({ children }) {
                         )}
                     
                     {productsOpen &&(
-                        <div>
+                        <div className='menu'>
                         
                         <div className='menuTitle'>
                         <FontAwesomeIcon icon={faArrowLeft} onClick={() => {setProductsOpen(false);

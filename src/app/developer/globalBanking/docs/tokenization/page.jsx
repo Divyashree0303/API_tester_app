@@ -34,7 +34,10 @@ export default function ApiDocsPage() {
                 <h3>Base URL</h3>
                 <div className="baseUrl">
                     <FontAwesomeIcon icon={faCopy} className="copyButtonUrl" onClick={() => handleCopy("https://api.fintractglobal.com/tokenization")} />
-                    <p>https://api.globalbanking.fintractglobal.com/</p>
+                    <div className="url">
+                      <p>https://api.globalbanking.fintractglobal.com/</p>
+                    </div>
+                   
                 </div>
 
                 {/* Tokenize API section */}
@@ -46,7 +49,11 @@ export default function ApiDocsPage() {
                 <div className="endpoint">
                     <div className="method post">POST</div>
                     <p className="details"> /tokenization/tokenize</p>
+                    <div>
                     <FontAwesomeIcon icon={faCopy} className="copyButtonURI" onClick={() => handleCopy("/tokenization/tokenize")} />
+                    </div>
+                    
+                    
                 </div>
 
                 <h4>Request</h4>

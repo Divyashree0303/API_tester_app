@@ -2,10 +2,11 @@
 
 .sub-container {
     display: flex;
+    position: relative;
 }
 
 .sub-main{
-    max-width: 80%;
+    flex-grow: 1;
 }
 
 .collapsed {
@@ -16,8 +17,9 @@
     border: none;
     cursor: pointer;
     background-color: white;
-    margin: 10px;
     border-radius: 5px;
+    display:none;
+    margin: 10px;
 }
 
 .toggleButton:hover {
@@ -29,8 +31,8 @@
 }
 
 .sidebar {
-    min-width:250px; /* Sidebar width */
-    /* background-color: #f0f0f0; */
+    flex: 0 0 250px; /* Sidebar with a fixed width of 250px */
+    min-width: 250px;
     padding: 0 0 0 20px;
     border-right: 1px solid grey;
 }
@@ -107,4 +109,55 @@
     font-weight: bold;
     color: #121661;
     border-left: 4px solid #121661;
+}
+
+@media (max-width: 768px) {
+    .sub-container{
+        position: relative;
+    }
+    .toggleButton{
+        display: block;
+        
+    }
+
+    .toggleButtonLeft{
+        position: absolute;
+        left: 10px;
+    }
+
+    .toggleButtonXmark{
+        position: absolute;
+        right: 20px;
+    }
+
+    .sidebar{
+        display: flex;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        padding: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        z-index: 3;
+        -webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	transition: all 600ms ease;
+
+    }
+
+    .subSidebar{
+        display: flex;
+        width: auto;
+        margin: auto;
+    }
+
+
+
+    .sub-main{
+        width: 100%;
+        margin:auto;
+    }
 }
