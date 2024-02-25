@@ -51,6 +51,7 @@
   .auth-link{
     text-decoration: none;
     color: #0070ba;
+    font-weight: bold;
   }
   
   .auth-link:hover {

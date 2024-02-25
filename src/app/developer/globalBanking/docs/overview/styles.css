@@ -1,0 +1,39 @@
+.overview-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: sans-serif;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .api-table {
+    margin-top: 25px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .api-table th, .api-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .api-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  .apiLink{
+    text-decoration: none;
+    color:#0070ba ;
+    font-weight: bold;
+  }
+
+  .apiLink:hover{
+    color: darkblue;
+  }

@@ -1,18 +1,21 @@
 "use client"
 import { useState } from 'react';
 import "./styles.css";
+import Body from "./_components/body"
 
 export default function Home(){
 
   const [requestType, setRequestType] = useState('GET');
   const [url, setUrl] = useState('');
-  const [requestBody, setRequestBody] = useState('');
   const [params, setParams] = useState([]);
   const [headers, setHeaders] = useState([]);
   const [response, setResponse] = useState({ status: null, data: null });
   const [authType, setAuthType] = useState('None');
   const [authCredentials, setAuthCredentials] = useState({ username: '', password: '' });
   const [accessToken, setAccessToken] = useState('');
+  const [requestBody, setRequestBody] = useState('');
+    const [requestBodyType, setRequestBodyType] = useState('raw'); // Added state for request body type
+    const [formDataParams, setFormDataParams] = useState([]);
 
   const handleSendRequest = async () => {
     try {
@@ -24,14 +27,41 @@ export default function Home(){
         }
       });
 
+
+
       const requestOptions = {
         method: requestType,
         headers: {
-          'Content-Type': 'application/json',
           ...Object.fromEntries(headers),
-        },
-        body: (requestType !== 'GET' && requestType !== 'DELETE') ? JSON.stringify(JSON.parse(requestBody)) : undefined,
+        }
       };
+
+      
+
+      if(requestType!=="GET" && requestType!=="DELETE"){
+      if (requestBodyType === 'raw') {
+        requestOptions.headers['Content-Type'] = 'application/json';
+        requestOptions.body = JSON.stringify(JSON.parse(requestBody));
+        console.log(requestOptions);
+      } else if (requestBodyType === 'formdata') {
+        requestOptions.headers['Content-Type'] = 'multipart/form-data ; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW';
+
+        const formData = new FormData();
+        
+        formDataParams.forEach(([key, value, type]) => {
+          formData.append(key, value);
+        });
+
+        requestOptions.body = formData;
+        for(var pair of formData.entries()) {
+          console.log(pair[0]+', '+pair[1]);
+        }
+        console.log(requestOptions);
+        console.log(formData.entries());
+      }
+
+    }
+
 
       if (authType === 'Basic') {
         const base64Credentials = btoa(`${authCredentials.username}:${authCredentials.password}`);
@@ -40,15 +70,81 @@ export default function Home(){
         requestOptions.headers['Authorization'] = `Bearer ${accessToken}`;
       }
 
+      console.log(JSON.stringify(requestOptions.headers, null, 2));
+
       const res = await fetch(urlWithParams.toString(), requestOptions);
 
+      // if (!res.ok) {
+      //   // Handle non-2xx response status codes
+      //   throw new Error(`Request failed with status ${res.status}`);
+      // }
+  
+      // Parse and set response data
       const data = await res.json();
       setResponse({ status: res.status, data });
+      
+      
     } catch (error) {
       console.error('Error sending request:', error);
       setResponse({ status: null, data: error.message });
     }
   };
+
+  // const handleSendRequest = async () => {
+  //   try {
+  //     let urlWithParams = new URL(url);
+
+  //     params.forEach(([key, value]) => {
+  //       if (!urlWithParams.searchParams.has(key)) {
+  //         urlWithParams.searchParams.append(key, value);
+  //       }
+  //     });
+
+  //     const requestOptions = {
+  //       method: requestType,
+  //       headers: {},
+  //     };
+
+  //     if (requestBodyType === 'raw') {
+  //       requestOptions.headers['Content-Type'] = 'application/json';
+  //       requestOptions.body = (requestType !== 'GET' && requestType !== 'DELETE') ? JSON.stringify(requestBody) : undefined;
+  //     } else if (requestBodyType === 'formdata') {
+  //       requestOptions.headers['Content-Type'] = 'multipart/form-data ; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW';
+  //       const formData = new FormData();
+        
+  //       formDataParams.forEach(([key, value, type]) => {
+  //         formData.append(key, value);
+  //       });
+
+  //       requestOptions.body = formData;
+  //     }
+
+  //     if (authType === 'Basic') {
+  //       const base64Credentials = btoa(`${authCredentials.username}:${authCredentials.password}`);
+  //       requestOptions.headers['Authorization'] = `Basic ${base64Credentials}`;
+  //     } else if (authType === 'OAuth2.0') {
+  //       requestOptions.headers['Authorization'] = `Bearer ${accessToken}`;
+  //     }
+
+  //     console.log(JSON.stringify(requestOptions.headers, null, 2));
+
+  //     const res = await fetch(urlWithParams.toString(), requestOptions);
+
+  //     if (res.ok) {
+  //       const data = await res.json();
+  //       setResponse({ status: res.status, data });
+  //     } else {
+  //       // Reset response state when an error occurs
+  //       setResponse({ status: null, data: null });
+  //       throw new Error(`Request failed with status ${res.status}`);
+  //     }
+      
+  //   } catch (error) {
+  //     console.error('Error sending request:', error);
+  //     // Reset response state when an error occurs
+  //     setResponse({ status: null, data: error.message });
+  //   }
+  // };
 
 
   const handleAuthTypeChange = (e) => {
@@ -191,15 +287,24 @@ export default function Home(){
          
           {(requestType !== 'GET' && requestType !== 'DELETE')&& (
             <div className='bodyContainer'>
-              <label className='label'>
-                Body:
+            Body
+              {/* <label className='label'>
+                
                 <textarea
                   className='textarea'
                   placeholder="Enter request body (JSON)"
                   value={requestBody}
                   onChange={(e) => setRequestBody(e.target.value)}
                 />
-              </label>
+              </label> */}
+              <Body
+                requestBody={requestBody}
+                setRequestBody={setRequestBody}
+                requestBodyType={requestBodyType}
+                setRequestBodyType={setRequestBodyType}
+                formDataParams={formDataParams}
+                setFormDataParams={setFormDataParams}
+              />
               <br />
             </div>)}
 
@@ -210,7 +315,7 @@ export default function Home(){
           {params.length > 0 && (
           <div className='headerContainer'>
             <label className='label'>
-              Query Parameters:
+              Query Parameters
               {params.map((param, index) => (
                 <div key={index} className='headerRow'>
                   <input
@@ -246,7 +351,7 @@ export default function Home(){
            <div className='headerContainer'> 
           
             <label className='label'>
-              Headers:
+              Headers
               {headers.map((header, index) => (
                 <div key={index} className='headerRow'>
                   <input
@@ -282,7 +387,7 @@ export default function Home(){
         </form>
           
         <div className='responseContainer'>
-          <strong>Response:</strong>
+          <strong>Response</strong>
           <div className='responseData'>
             <div>Status Code: {response.status}</div>
             <pre className='wordWrap'>{JSON.stringify(response.data, null, 2)}</pre>

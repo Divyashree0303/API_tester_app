@@ -34,7 +34,8 @@
     flex: 0 0 250px; /* Sidebar with a fixed width of 250px */
     min-width: 250px;
     padding: 0 0 0 20px;
-    border-right: 1px solid grey;
+    border-right: 1.5px solid #ddd;
+    height: 100%;
 }
 
 .sidebarList {
