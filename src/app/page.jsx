@@ -90,62 +90,7 @@ export default function Home(){
     }
   };
 
-  // const handleSendRequest = async () => {
-  //   try {
-  //     let urlWithParams = new URL(url);
-
-  //     params.forEach(([key, value]) => {
-  //       if (!urlWithParams.searchParams.has(key)) {
-  //         urlWithParams.searchParams.append(key, value);
-  //       }
-  //     });
-
-  //     const requestOptions = {
-  //       method: requestType,
-  //       headers: {},
-  //     };
-
-  //     if (requestBodyType === 'raw') {
-  //       requestOptions.headers['Content-Type'] = 'application/json';
-  //       requestOptions.body = (requestType !== 'GET' && requestType !== 'DELETE') ? JSON.stringify(requestBody) : undefined;
-  //     } else if (requestBodyType === 'formdata') {
-  //       requestOptions.headers['Content-Type'] = 'multipart/form-data ; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW';
-  //       const formData = new FormData();
-        
-  //       formDataParams.forEach(([key, value, type]) => {
-  //         formData.append(key, value);
-  //       });
-
-  //       requestOptions.body = formData;
-  //     }
-
-  //     if (authType === 'Basic') {
-  //       const base64Credentials = btoa(`${authCredentials.username}:${authCredentials.password}`);
-  //       requestOptions.headers['Authorization'] = `Basic ${base64Credentials}`;
-  //     } else if (authType === 'OAuth2.0') {
-  //       requestOptions.headers['Authorization'] = `Bearer ${accessToken}`;
-  //     }
-
-  //     console.log(JSON.stringify(requestOptions.headers, null, 2));
-
-  //     const res = await fetch(urlWithParams.toString(), requestOptions);
-
-  //     if (res.ok) {
-  //       const data = await res.json();
-  //       setResponse({ status: res.status, data });
-  //     } else {
-  //       // Reset response state when an error occurs
-  //       setResponse({ status: null, data: null });
-  //       throw new Error(`Request failed with status ${res.status}`);
-  //     }
-      
-  //   } catch (error) {
-  //     console.error('Error sending request:', error);
-  //     // Reset response state when an error occurs
-  //     setResponse({ status: null, data: error.message });
-  //   }
-  // };
-
+  
 
   const handleAuthTypeChange = (e) => {
     setAuthType(e.target.value);
