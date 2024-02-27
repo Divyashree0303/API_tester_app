@@ -3,7 +3,7 @@
     margin: auto;
     padding: 20px;
     overflow-wrap: break-word; /* Overflow content will wrap onto the next line */
-  text-align: justify;
+  /* text-align: justify; */
   }
 
 .basicAuthContainer {

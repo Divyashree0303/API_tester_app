@@ -60,15 +60,24 @@ export default function Body({requestBody,setRequestBody,requestBodyType,setRequ
                     value={param[0]}
                     onChange={(e) => handleFormDataKeyChange(index, e.target.value)}
                   />
-                  <input
-                    className='input'
-                    type={param[2] === 'File' ? 'file' : 'text'} // Render input type based on value type
-                    placeholder="Value"
-                    value={param[1]}
-                    onChange={(e) => handleFormDataValueChange(index, e.target.value)}
-                  />
+                  {param[2] === 'File' ? (
+                      <input
+                        className='input'
+                        type='file'
+                        placeholder="Value"
+                        onChange={(e) => handleFormDataValueChange(index, e.target.files[0])}
+                      />
+                      ): (
+                      <input
+                        className='input'
+                        type={'text'}
+                        placeholder="Value"
+                        value={param[1]}
+                        onChange={(e) => handleFormDataValueChange(index, e.target.value)}
+                      />
+                  )}
                   <select
-                    className='select'
+                    className='typeSelect'
                     value={param[2]}
                     onChange={(e) => handleFormDataValueTypeChange(index, e.target.value)}
                   >

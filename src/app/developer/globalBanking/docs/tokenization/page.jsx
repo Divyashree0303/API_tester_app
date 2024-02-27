@@ -33,7 +33,7 @@ export default function ApiDocsPage() {
                 {/* Base URL section */}
                 <h3>Base URL</h3>
                 <div className="baseUrl">
-                    <FontAwesomeIcon icon={faCopy} className="copyButtonUrl" onClick={() => handleCopy("https://api.fintractglobal.com/tokenization")} />
+                    <FontAwesomeIcon icon={faCopy} className="copyButtonUrl" onClick={() => handleCopy("https://api.globalbanking.fintractglobal.com/")} />
                     <div className="url">
                       <p>https://api.globalbanking.fintractglobal.com/</p>
                     </div>
