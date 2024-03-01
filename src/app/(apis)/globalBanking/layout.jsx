@@ -81,33 +81,35 @@ function Sidebar({ toggleDropdown, dropdowns, handleClick, clicked, toggleSideba
         <div className="subSidebar">
             <ul className="sidebarList">
                 <li className='bold'>Global Banking</li>
-                <li><Link href="/developer/globalBanking/docs/introduction" onClick={() => handleClick('introduction')} className={clicked['introduction'] ? `clicked` : ``} >Introduction</Link></li>
-                <li><Link href="/developer/globalBanking/docs/authGuide" onClick={() => handleClick('authGuide')} className={clicked['authGuide'] ? `clicked` : ``}>Authentication Guide</Link></li>
-                <li><Link href="/developer/globalBanking/docs/overview" onClick={() => handleClick('overview')} className={clicked['overview'] ? `clicked` : ``}>Overview</Link></li>
+                <li><Link href="/globalBanking/introduction" onClick={() => handleClick('introduction')} className={clicked['introduction'] ? `clicked` : ``} >Introduction</Link></li>
+                <li><Link href="/globalBanking/authGuide" onClick={() => handleClick('authGuide')} className={clicked['authGuide'] ? `clicked` : ``}>Authentication Guide</Link></li>
+                <li><Link href="/globalBanking/overview" onClick={() => handleClick('overview')} className={clicked['overview'] ? `clicked` : ``}>Overview</Link></li>
                 <li className={dropdowns['tokenization'] ? `withDropdown open` : `withDropdown`}>
 
                     <span onClick={() => toggleDropdown('tokenization')} >
                         {dropdowns['tokenization'] ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretUp} />} Tokenization </span>
 
                     <ul className="dropdownMenu">
-                        <li><Link href="/developer/globalBanking/docs/tokenization" onClick={() => handleClick('tokenization')} className={clicked['tokenization'] ? `clicked` : ``}>Tokenization</Link></li>
-                        <li><Link href="/developer/globalBanking/docs/tokenization#tokenize" onClick={() => handleClick('tokenize')} className={clicked['tokenize'] ? `clicked` : ``}><div className="method post">POST</div> Tokenize</Link></li>
-                        <li><Link href="/developer/globalBanking/docs/tokenization#detokenize" onClick={() => handleClick('detokenize')} className={clicked['detokenize'] ? `clicked` : ``}><div className="method post">POST</div> Detokenize</Link></li>
+                        <li><Link href="/globalBanking/tokenization/docs" onClick={() => handleClick('tokenization')} className={clicked['tokenization'] ? `clicked` : ``}>Tokenization</Link></li>
+                        <li><div><Link href="/globalBanking/tokenization/docs#tokenize" onClick={() => handleClick('tokenize')} className={clicked['tokenize'] ? `clicked` : ``}><div className="method post">POST</div><div className='api-div'><p>Tokenize</p></div></Link></div></li>
+                        <li><div><Link href="/globalBanking/tokenization/docs#detokenize" onClick={() => handleClick('detokenize')} className={clicked['detokenize'] ? `clicked` : ``}><div className="method post">POST</div><div className='api-div'><p>Detokenize</p></div></Link></div></li>
                     </ul>
                 </li>
-                <li className={dropdowns['support'] ? `withDropdown open` : `withDropdown`}>
+                <li className={dropdowns['kyc'] ? `withDropdown open` : `withDropdown`}>
 
-                    <span onClick={() => toggleDropdown('support')}>
-                        {dropdowns['support'] ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretUp} />} Support </span>
+                    <span onClick={() => toggleDropdown('kyc')}>
+                        {dropdowns['kyc'] ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretUp} />} KYC </span>
 
                     <ul className="dropdownMenu">
-                        <li><Link href="#tokenized">Ticket</Link></li>
-                        <li><Link href="#tokenized">Ticket</Link></li>
-                        <li><Link href="#detokenize">Ticket</Link></li>
+                    <li><Link href="/globalBanking/kyc/docs" onClick={() => handleClick('kyc')} className={clicked['kyc'] ? `clicked` : ``}>KYC</Link></li>
+                        <li><div><Link href="/globalBanking/kyc/docs#userRegistration" onClick={() => handleClick('register-user')} className={clicked['register-user'] ? `clicked` : ``}><div className="method post">POST</div><div className='api-div'><p>User registration</p></div></Link></div></li>
+                        <li><div><Link href="/globalBanking/kyc/docs#userVerification" onClick={() => handleClick('verify-user-id')} className={clicked['verify-user-id'] ? `clicked` : ``}><div className="method post">POST</div><div className='api-div'><p>User verification</p></div></Link></div></li>
+                        <li><div><Link href="/globalBanking/kyc/docs#userVerificationWithPass" onClick={() => handleClick('verify-user-pass')} className={clicked['verify-user-pass'] ? `clicked` : ``}><div className="method post">POST</div><div className='api-div'><p>User verification with passport</p></div></Link></div></li>
+                        <li><div><Link href="/globalBanking/kyc/docs#faceVerification" onClick={() => handleClick('verify-face')} className={clicked['verify-face'] ? `clicked` : ``}><div className="method post">POST</div><div className='api-div'><p>Face verification</p></div></Link></div></li>
                     </ul>
                 </li>
                 {/* Add more headings with dropdowns as needed */}
-                <li><Link href="/" target="_blank" className='bold'>API Testing</Link></li>
+                <li><Link href="/apiTester" target="_blank" className='bold'>API Testing</Link></li>
             </ul>
             <FontAwesomeIcon icon={faXmark} className="toggleButton toggleButtonXmark" onClick={() => toggleSidebarLeft()} />
             </div>

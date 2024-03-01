@@ -1,6 +1,8 @@
 /* Layout.module.css */
 .main{
     height: 100%;
+    position: relative;
+    top: 65px;
 }
 
 .nav-container {
@@ -12,12 +14,15 @@
 }
 
 .navbar {
-    /* background: #f4f4f4; */
+    z-index:3 ;
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
 }
 
 
@@ -111,6 +116,8 @@
     display: none;
     flex-direction: column;
     padding: 20px;
+    position: relative;
+    top:65px;
 }
 
 .menu ul {

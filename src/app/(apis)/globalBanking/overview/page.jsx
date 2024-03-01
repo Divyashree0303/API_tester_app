@@ -6,7 +6,8 @@ import "./styles.css";
 import React from 'react';
 
 const apiCollections = [
-  { name: 'Tokenization', purpose: 'tokenize and detokenize sensitive information securely', url:"/tokenisation" },
+  { name: 'Tokenization', purpose: 'Tokenize and detokenize sensitive information securely', url:"/globalBanking/tokenization/docs" },
+  { name: 'KYC', purpose: 'Register user and verify identity using ID, passport and face', url:"/globalBanking/kyc/docs" }
  
 ];
 

@@ -76,6 +76,7 @@ export default function ApiDocsPage() {
   }
 }`}
                     </pre>
+
                 </div>
 
 
@@ -100,6 +101,11 @@ export default function ApiDocsPage() {
 }`}
                     </pre>
                 </div>
+
+                <div className="note">
+                <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+                </div>
+                
                 </div>
 
                 {/* Detokenize API section */}
@@ -159,6 +165,10 @@ export default function ApiDocsPage() {
   }
 }`}
                     </pre>
+                </div>
+
+                <div className="note">
+                <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
                 </div>
 
                 </div>
