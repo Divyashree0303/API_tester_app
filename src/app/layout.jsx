@@ -5,6 +5,10 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import '@fortawesome/fontawesome-svg-core/styles.css';
+// Prevent fontawesome from adding its CSS since we did it manually above:
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; /* eslint-disable import/first */
  import "./styles.css";
 
 
@@ -74,10 +78,10 @@ return (
                     <div className=" rightList tools">
                         <button className="toolsButton">Tools</button>
                         <div className="toolsDropdownContent">
-                            <Link href="/apiTester">API Testing</Link>
+                            <Link href="/apiTester" target="_blank">API Testing</Link>
                         </div>
                     </div>
-                    <div className="rightList productsButton" ><Link href="/introduction">Support</Link></div>
+                    <div className="rightList productsButton" ><Link href="/">Support</Link></div>
                     <button className="loginButton"><Link style={{textDecoration:"none",color:"white",fontWeight:"bold"}} href="https://globalbanking.fintractglobal.com/signin">Login</Link></button>
                 </div>
                 <div className="hamburger" >
@@ -98,7 +102,9 @@ return (
                                     setToolsOpen(true);
                                     setMenuOpen(false);
                                 }} >Tools <FontAwesomeIcon icon={faArrowRight} /></div></li>
+                                <li><div><Link href="/">Support</Link></div></li>
                             </ul>
+
                             <button className="loginButton"><Link style={{textDecoration:"none",color:"white"}} href="https://globalbanking.fintractglobal.com/signin">Login</Link></button>
                         </div>
                         )}
