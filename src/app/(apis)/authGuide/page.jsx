@@ -6,10 +6,13 @@ export default function introduction(){
 
       
         
-        <h1 className="auth-heading">Authentication Guide</h1>
+        <h1 className="auth-heading">Authentication</h1>
+        <p>Fintract Global APIs use API key to authenticate requests.</p>
+        <p>It's crucial to safeguard your API keys as they grant significant privileges. Please refrain from disclosing your secret API keys in public platforms like GitHub or client-side code. Protect them with care to prevent unauthorized access and misuse.</p>
+        <p>Please proceed through the following steps to acquire your API keys.</p>
         <ol className="auth-steps">
           <li>
-            <h2>Registration</h2>
+            <h3>Registration</h3>
             <p>Create an account with Fintract Global:</p>
             <ul >
               <li>Visit the <Link  className="auth-link" href="https://globalbanking.fintractglobal.com/signup">Sign Up</Link> page to create a new account.</li>
@@ -17,14 +20,14 @@ export default function introduction(){
     
           </li>
           <li>
-            <h2>Login</h2>
+            <h3>Login</h3>
             <p>Log in to your Fintract Global account:</p>
             <ul >
               <li>Visit the <Link  className="auth-link" href="https://globalbanking.fintractglobal.com/signin">Login</Link> page.</li>
             </ul>
           </li>
           <li>
-            <h2>Get Access Token</h2>
+            <h3>Get Access Token</h3>
             <p>Obtain an access token to authenticate API requests:</p>
             <ul >
               <li>Navigate to the API Keys section of your account dashboard.</li>

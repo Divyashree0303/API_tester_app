@@ -1,0 +1,209 @@
+/* Layout.module.css */
+
+.main{
+    height: 100%;
+    position: relative;
+    top: 65px;
+}
+
+.nav-container {
+    width: 100%;
+    display:block;
+    /* max-width: 1200px; */
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+
+.navbar {
+    z-index:6 ;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+.navbarLeft{
+    display: flex;
+    gap: 10px;
+}
+.navbarRight>div{
+    margin: auto 0;
+}
+
+.navbarLeft img {
+    width: 40px;
+    height: auto;
+    margin: auto 0 auto 15px;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    gap: 20px;
+}
+
+.rightList {
+    position: relative;
+    margin-right: 20px;
+}
+
+.productsButton,.toolsButton{
+    color: #121661;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.rightList > a{
+    text-decoration: none;
+    color: #121661;
+}
+
+.productsDropdownContent,.toolsDropdownContent {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.productsDropdownContent a,.toolsDropdownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.productsDropdownContent a:hover,.toolsDropdownContent a:hover {
+   color:#121661;
+   font-weight: bold;
+}
+
+.products:hover .productsDropdownContent {
+    display: block;
+}
+
+.tools:hover .toolsDropdownContent {
+    display: block;
+}
+
+
+.loginButton {
+    background-color:#0070ba; /* Example background color for the login button */
+    color: white; /* Example text color for the login button */
+    border: 2px solid #0070ba;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.loginButton:hover{
+    background-color: #121661;
+    border: 2px solid #121661;
+    cursor: pointer;
+}
+
+.hamburger {
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    display: none; /* Initially hide for big screens */
+}
+
+.hamburgerIcon {
+    color: #121661;
+    width: 30px;
+    /* height: 3px; */
+    margin: 6px 0;
+    transition: transform 0.3s;
+}
+
+.hamburgerIconOpen {
+    color: #121661;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    top:65px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a,.menu ul li div{
+    color:#121661;
+    /* font-weight: bold; */
+    text-decoration: none;
+    /* font-size: 15px; */
+}
+
+.menu ul li a:hover,.menu ul li div:hover{
+    color:#121661;
+    font-weight: bold; 
+    text-decoration: none;
+    /* font-size: 15px; */
+}
+
+.menuTitle{
+    display: flex;
+    font-weight: bold;
+    text-decoration: none;
+    /* font-size: 18px; */
+    gap: 5px;
+    padding: 10px 0;
+    border-radius: 5px;
+    
+}
+
+.home{
+    position: relative;
+    top:70px;
+}
+
+@media (max-width: 768px) {
+    .navbarRight {
+        display: none; /* Hide for small screens */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger button for small screens */
+    }
+
+    .menu {
+        display: flex; 
+        position: fixed;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        z-index: 4;
+        width:100%;/* Initially hide dropdown menu for small screens */
+    }
+
+}
+
+@media (min-width: 768px){
+    .menuTitle{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+
+

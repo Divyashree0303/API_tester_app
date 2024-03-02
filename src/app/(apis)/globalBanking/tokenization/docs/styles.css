@@ -1,7 +1,7 @@
 .tokenization-container {
     max-width: 800px;
     margin: auto;
-    padding: 20px;
+    padding: 10px 20px;
     font-family: sans-serif;
   }
 
@@ -70,6 +70,7 @@
     border-radius: 4px;
     margin-left: 10px;
     display: inline-block;
+    font-size: 7px;
 }
 .post{
   background-color: #49cc90;

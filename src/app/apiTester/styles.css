@@ -3,6 +3,8 @@
     margin: auto;
     padding: 20px;
     overflow-wrap: break-word; /* Overflow content will wrap onto the next line */
+    position: relative;
+    top:65px;
   /* text-align: justify; */
   }
 
