@@ -43,7 +43,7 @@ export default function ApiDocsPage() {
                 {/* Tokenize API section */}
                 <div id="tokenize" className="section">
                 <h3>1. Tokenize</h3>
-                <p>Tokenize sensitive information to enhance security during data storage and transmission.</p>
+                <p>Tokenize sensitive information to enhance security during data storage and transmission. When you make calls to the tokenize API, include the access token in request as value for key as shown</p>
 
                 <h4>Endpoint</h4>
                 <div className="endpoint">

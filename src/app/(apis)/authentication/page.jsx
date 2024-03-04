@@ -1,7 +1,7 @@
 import Link from "next/link";
 import "./styles.css";
 
-export default function introduction(){
+export default function Auth(){
     return ( <div className="auth-container">
 
       

@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import "./styles.css";
-import Body from "../_components/body"
+import Body from "../_components/reqBody/body"
 
 export default function Home() {
 

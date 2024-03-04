@@ -1,7 +1,9 @@
+
 import "./styles.css";
 
 const Introduction = () => {
   return (
+    <div>
     <div className="intro-container">
       
         <h1 className="intro-heading">Welcome to Our API Documentation</h1>
@@ -22,6 +24,8 @@ const Introduction = () => {
       
 
       {/* Any additional stylesheets or scripts can be included here */}
+    </div>
+   
     </div>
   );
 };

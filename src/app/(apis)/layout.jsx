@@ -97,7 +97,7 @@ function Sidebar({ toggleDropdown, dropdowns, handleClick, clicked, toggleSideba
             <div className="subSidebar">
                 <ul className="sidebarList">
                     <li><Link href="/introduction" onClick={() => handleClick('introduction')} className={clicked['introduction'] ? `clicked` : ``} >Introduction</Link></li>
-                    <li><Link href="/authGuide" onClick={() => handleClick('authGuide')} className={clicked['authGuide'] ? `clicked` : ``}>Authentication</Link></li>
+                    <li><Link href="/authentication" onClick={() => handleClick('authGuide')} className={clicked['authGuide'] ? `clicked` : ``}>Authentication</Link></li>
 
                     <li style={{padding:"10px 0"}} className={dropdowns['globalBanking'] ? `withDropdown open` : `withDropdown`}>
 

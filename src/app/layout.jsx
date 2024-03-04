@@ -3,6 +3,7 @@ import { SessionProvider } from 'next-auth/react';
 import { Session } from 'next-auth'
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Footer from "./_components/footer/footer"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -55,7 +56,9 @@ export default function RootLayout({ children }) {
 
 return (
     <html lang="en">
-      <body style={{ margin: 0,fontFamily:"sans-serif"}}>
+      <body style={{ margin: 0,fontFamily:"sans-serif",position:"relative",minHeight:"100vh"}}>
+
+      
 
       
             <nav className="navbar">
@@ -66,6 +69,7 @@ return (
                     <div className='developer'><p>Developer</p></div>
                 </div>
                 <div className="navbarRight">
+                <div className="rightList productsButton" ><Link href="/">Home</Link></div>
                     <div className="rightList productsButton" ><Link href="/introduction">APIs</Link></div>
                     <div className=" rightList products">
                         <button className="productsButton">Docs</button>
@@ -119,7 +123,7 @@ return (
 
                         </div>
                         <ul>
-                        <li><Link href="/developer/globalBanking/docs/introduction">Global Banking</Link></li>
+                        <li><Link href="/globalBanking">Global Banking</Link></li>
                         <li><Link href="#">Product 2</Link></li>
                         <li><Link href="#">Product 3</Link></li>
                     </ul>
@@ -148,9 +152,12 @@ return (
              
            
 
-        <SessionProvider session={Session}>
+        <SessionProvider  session={Session}>
           {children}
         </SessionProvider>
+
+       <Footer/>
+    
       </body>
     </html>)
 

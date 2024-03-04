@@ -1,7 +1,6 @@
 /* Layout.module.css */
 
 .main{
-    height: 100%;
     position: relative;
     top: 65px;
 }
@@ -23,6 +22,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    top:0;
     width: 100%;
 }
 
@@ -81,7 +81,7 @@
     text-decoration: none;
     display: block;
     background-color: white;
-    border-radius: 4px;
+    /* border-radius: 4px; */
 }
 
 .productsDropdownContent a:hover,.toolsDropdownContent a:hover {
@@ -178,6 +178,135 @@
     position: relative;
     top:70px;
 }
+.top-container{
+    padding:80px;
+    background-color: #0070ba;
+    color: white;
+}
+
+.top-container h1{
+    margin-top: 0;
+}
+
+.top-container button{
+    background-color: #121661;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.top-container button:hover{
+    box-shadow: white 0px 8px 24px;
+}
+
+.top-container a{
+    color: white;
+    text-decoration: none;
+    margin: auto 0;
+}
+.top-container a:hover{
+    color: white;
+    text-decoration:underline;
+}
+.sub-top-container{
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+.products-container{
+    padding: 40px 80px;
+    background-color: #EEEEEE;
+}
+
+.card-container {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: space-around;
+    
+
+  }
+
+  .card {
+    display: flex;
+    min-width: 200px; /* Adjust according to the number of columns you want */
+    margin-bottom: 20px;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  .card-icon{
+    height: 30px;
+    margin: auto 10px auto 0;
+    color:#FF9130;
+  }
+
+  .card a{
+    text-decoration: none;
+    color:black;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .card p{
+    font-size: 12px;
+    margin:2px 0 0 0;
+    color:#686D76;
+  }
+
+  .card:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .tools-container{
+    padding: 40px 80px;
+    background-color: #F2F4D1;
+    display: flex;
+  }
+
+  .tools-container-heading{
+    padding:10px;
+    margin: auto;
+    width: fit-content;
+  }
+
+  .tools-card{
+    padding: 10px;
+    max-width: 350px;
+    margin: auto;
+  }
+
+  .tools-card>div{
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .tools-card p{
+    color:#686D76;
+  }
+  .tools-card a{
+    text-decoration: none;
+    color: #0070ba;
+    font-weight: 600;
+  }
+
+
+
+  .tools-card a:hover{
+    text-decoration: underline;
+  }
+
+  .tools-sub-heading{
+    display: flex;
+  }
+
+
+
 
 @media (max-width: 768px) {
     .navbarRight {
@@ -195,6 +324,22 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         z-index: 4;
         width:100%;/* Initially hide dropdown menu for small screens */
+    }
+
+    .tools-container{
+        display: block;
+    }
+
+    .top-container{
+        padding:40px;
+    }
+
+    .products-container{
+        padding:40px;
+    }
+
+    .tools-container{
+        padding: 40px;
     }
 
 }
