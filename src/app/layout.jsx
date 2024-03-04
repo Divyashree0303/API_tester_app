@@ -11,6 +11,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false; /* eslint-disable import/first */
 import "./styles.css";
+import Head from 'next/head';
+
 
 
 export default function RootLayout({ children }) {
@@ -56,6 +58,20 @@ export default function RootLayout({ children }) {
 
     return (
         <html lang="en">
+        <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Access comprehensive developer documentation for Fintract Global, a London-based company focused on building cutting-edge fintech and regtech platforms using SaaS and BaaS models. Explore innovative products like Fraudify and Finalytics designed to support the digital economy." />
+        <meta name="keywords" content="Fintract Global, fintech, regtech, SaaS, BaaS, developer documentation, fintech platform, regtech platform, Fraudify, Funalytics, digital economy" />
+        <meta name="author" content="Fintract Global" />
+        <meta name="publisher" content="Fintract Global" />
+        <meta name="version" content="1.0" />
+        <meta name="audience" content="Developers, programmers, software engineers, fintech enthusiasts" />
+        <meta name="content-type" content="Technical documentation, tutorials, API reference, code examples" />
+        <meta name="language" content="English" />
+        <meta name="accessibility" content="Accessible to all users" />
+        <title>Fintract Global Developer Documentation</title>
+        </Head>
             <body style={{ margin: 0, fontFamily: "sans-serif", position: "relative", minHeight: "100vh" }}>
 
 
