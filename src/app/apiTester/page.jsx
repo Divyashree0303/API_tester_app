@@ -316,7 +316,7 @@ export default function Home() {
       <div className='responseContainer'>
         <strong>Response</strong>
         <div className='responseData'>
-          <div>Status Code: {response.status}</div>
+          <div><p>Status Code: {response.status}</p></div>
           <pre className='wordWrap'>{JSON.stringify(response.data, null, 2)}</pre>
         </div>
       </div>

@@ -116,10 +116,12 @@
     border: 1px solid #ddd;
     padding: 12px;
     border-radius: 4px;
+    font-family: sans-serif;
   }
 
   .wordWrap {
     white-space: pre-line;
+    font-size: 16px;
   }
 
   .signin-container {

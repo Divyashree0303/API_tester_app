@@ -50,6 +50,7 @@ export default function RootLayout({ children }) {
         setMenuOpen(false);
         setShowHamburger(true);
         setProductsOpen(false);
+        setToolsOpen(false);
     }
 
     const toggleProducts = () => {
@@ -116,6 +117,7 @@ export default function RootLayout({ children }) {
                     {menuOpen && (
                         <div>
                             <ul>
+                                <li><Link href="/">Home</Link></li>
                                 <li><Link href="/introduction">APIs</Link></li>
                                 <li><div onClick={() => {
                                     setProductsOpen(true);
