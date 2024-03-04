@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuildingColumns,faCode,faUserSecret,faCreditCard,faChartLine,faComment,faMagnifyingGlassDollar} from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
+
 export default function Body() {
     return (
         <div className="home">
