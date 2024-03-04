@@ -223,15 +223,14 @@
     padding: 20px 0;
     display: flex;
     flex-wrap: wrap;
-    gap:20px;
-    justify-content: space-around;
-    
-
+    gap:40px;
+    justify-content: center;
+   
   }
 
   .card {
     display: flex;
-    min-width: 200px; /* Adjust according to the number of columns you want */
+    width: 200px; /* Adjust according to the number of columns you want */
     margin-bottom: 20px;
     padding: 20px;
     /* border: 1px solid #ccc; */
@@ -241,7 +240,7 @@
 
   .card-icon{
     height: 30px;
-    margin: auto 10px auto 0;
+    margin: auto 20px auto 0;
     color:#FF9130;
   }
 
