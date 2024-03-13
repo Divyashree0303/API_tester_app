@@ -13,6 +13,7 @@
 }
 
 .sub-main{
+    min-width: 0;
     flex-grow: 1;
     border-left: 1.5px solid #ddd;
 }
@@ -98,10 +99,29 @@
     font-size: 7px;
     font-weight: bolder;
     height: fit-content;
+    min-width: 25px;
+    text-align: center;
 }
 .post{
   background-color: #49cc90;
 }
+
+.put{
+    background-color: #fca130;
+}
+
+.delete{
+    background-color: #f93e3e;
+}
+.patch{
+    background-color: #50e3c2;
+}
+
+.get{
+    background-color: #61affe;
+}
+
+
 
 .api-div{
     height: fit-content;

@@ -193,7 +193,7 @@ https://api.kyc.fintractglobal.com/userVerification/1234567890`}
                     <h4>Endpoint</h4>
                     <div className="endpoint">
                         <div className="method post">POST</div>
-                        <p className="details">  /userVerificationPass/&#123;id&#125</p>
+                        <p className="details">  /userVerificationPass/&#123;id&#125;</p>
                         <FontAwesomeIcon icon={faCopy} className="copyButtonURI" onClick={() => handleCopy(" /userVerificationPass/{id}")} />
                     </div>
 

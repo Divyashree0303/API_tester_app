@@ -1,0 +1,31 @@
+.header-params,.req-res-data{
+    display:flex;
+    gap:20px;
+  }
+
+  .req-res-div{
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width:100%;
+    overflow-x:scroll;
+  }
+
+  .req-res-div>h4{
+    margin-top: 0;
+  }
+
+  .req-res-div>h5{
+    margin-bottom: 0;
+  }
+
+  .preWidth{
+    min-width:120px;
+    overflow:auto;
+  }
+
+  .preWidth::-webkit-scrollbar {
+    width: 1px;
+  }
+  

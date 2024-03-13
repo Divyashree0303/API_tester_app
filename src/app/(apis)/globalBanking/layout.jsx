@@ -1,20 +1,18 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+
 import "./styles.css";
 
 
 export default function Layout({ children }) {
 
+   
 
     return (
-        <div >
-
-            <main >{children}</main>
-        </div>
+        
+            <main className="sub-main">{children}</main>
 
     );
 }
-
-
-

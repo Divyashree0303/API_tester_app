@@ -12,10 +12,35 @@
     color: #333;
     margin-bottom: 20px 0;
   }
+
+  .auth-steps-div{
+    display: flex;
+  }
+
+  .auth-steps-div>div{
+    background-color: rgb(245, 247, 250);
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+
+  .auth-call{
+    height: fit-content;
+  }
+
+  .auth-call span{
+    background-color: white;
+  }
+
+  .steps{
+    min-width: 250px;
+    margin-left: 0;
+  }
   
   .auth-steps {
     list-style: none;
     padding: 0;
+
   }
   
   .auth-steps li {
@@ -32,9 +57,6 @@
     margin-bottom: 10px;
   }
   
-  .auth-steps ul {
-    padding-left: 20px;
-  }
   
   .auth-steps ul li {
     margin-bottom: 5px;
@@ -59,4 +81,13 @@
     color: darkblue;
   }
 
+  @media (max-width: 768px) {
+    .auth-steps-div{
+      display: block;
+    }
+
+    .auth-call{
+      margin-top: 10px;
+    }
+  }
 

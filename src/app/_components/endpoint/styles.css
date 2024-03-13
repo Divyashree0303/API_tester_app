@@ -1,0 +1,109 @@
+.endpoint{
+   /* Example border for the endpoint div */
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.endpoint.POST{
+  background-color: rgba(73,204,144,.1);
+  border: 1px solid #49cc90;
+}
+
+.endpoint.PUT{
+  background-color: rgba(252, 161, 48, .1);
+  border: 1px solid #fca130;
+}
+
+.endpoint.DELETE{
+  background-color: rgba(249, 62, 62, .1);
+  border: 1px solid #f93e3e;
+}
+
+.endpoint.PATCH{
+  background-color: rgba(80, 227, 194, .1);
+  border: 1px solid #50e3c2;
+}
+
+.endpoint.GET{
+  background-color: rgba(97, 175, 254, .1);
+  border: 1px solid #61affe;
+}
+
+.copyButtonURI {
+    color: #476072;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+    position: absolute;
+    right:5px;
+    top: 5px;
+  }
+
+  .copyButtonURI.POST:hover{
+    color:#49cc90;
+  }
+
+  .copyButtonURI.PUT:hover{
+    color:#fca130;
+  }
+
+  .copyButtonURI.DELETE:hover{
+    color: #f93e3e;
+  }
+
+  .copyButtonURI.PATCH:hover{
+    color: #50e3c2;
+  }
+
+  .copyButtonURI.GET:hover{
+    color: #61affe;
+  }
+
+
+  .method {/* Example color for the method */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 7px;
+}
+.method.POST{
+    background-color: #49cc90;
+}
+
+.method.PUT{
+  background-color: #fca130;;
+}
+
+.method.DELETE{
+  background-color: #f93e3e;
+}
+
+.method.PATCH{
+  background-color: #50e3c2;
+}
+
+.method.GET{
+  background-color: #61affe;
+}
+
+.details {
+    display: inline-block;
+    margin-left: 10px;
+    font-family: monospace;
+    font-weight:bold;
+    font-size:larger;
+}
+
+.details p {
+    margin: 0;
+}
+  
+  .endpoint {
+    margin-bottom: 20px;
+  }

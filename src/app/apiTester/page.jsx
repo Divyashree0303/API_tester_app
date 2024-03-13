@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import "./styles.css";
-import Body from "../_components/reqBody/body"
+import Body from "../_components/reqBodyTester/body"
 
 export default function Home() {
 
@@ -13,7 +13,7 @@ export default function Home() {
   const [authType, setAuthType] = useState('None');
   const [authCredentials, setAuthCredentials] = useState({ username: '', password: '' });
   const [accessToken, setAccessToken] = useState('');
-  const [requestBody, setRequestBody] = useState('');
+  const [requestBody, setRequestBody] = useState('{}');
   const [requestBodyType, setRequestBodyType] = useState('raw'); // Added state for request body type
   const [formDataParams, setFormDataParams] = useState([]);
 
@@ -321,7 +321,6 @@ export default function Home() {
         </div>
       </div>
 
-      <button className='SignOutButton' onClick={handleSignOut}>Sign Out</button>
     </div>
   );
 }
