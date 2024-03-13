@@ -62,6 +62,7 @@ export default function RootLayout({ children }) {
             <head>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta property="og:image" content="display_img.jpeg"></meta>
                 <meta name="description" content="Headquartered in London, Fintract Global stands as a pioneering force in the realm of financial technology (fintech) and regulatory technology (regtech). With an unwavering commitment to innovation, Fintract Global is dedicated to crafting cutting-edge solutions that propel the digital economy forward. Leveraging a Software-as-a-Service (SaaS) and Banking-as-a-Service (BaaS) business model, the company offers a diverse suite of groundbreaking products tailored to meet the evolving needs of businesses and consumers alike. Among its notable offerings are Fraudify and Funalytics, revolutionary platforms designed to combat financial fraud and provide insightful analytics, respectively. Through its developer documentation, Fintract Global empowers developers, programmers, and fintech enthusiasts worldwide with comprehensive technical resources, tutorials, and code examples, fostering collaboration and driving the advancement of financial technology solutions." />
                 <meta name="keywords" content="Fintract Global, fintech, regtech, SaaS, BaaS, developer documentation, fintech platform, regtech platform, Fraudify, Funalytics, digital economy" />
                 <meta name="author" content="Fintract Global" />
