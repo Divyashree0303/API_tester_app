@@ -14,7 +14,7 @@ export default function ReqResBody({ Request, Response }) {
             <div className="header-params">
               {Object.entries(Request.param).map(([key, value]) => (
                 <>
-                  <pre className="preWidth">{key}*:</pre>
+                  <pre key={key} className="preWidth">{key}*:</pre>
                   <div>
                     <pre>{value[0]}</pre>
                     <p>{value[1]}</p>
@@ -34,7 +34,7 @@ export default function ReqResBody({ Request, Response }) {
             <div className="header-params">
               {Object.entries(Request.header).map(([key, value]) => (
                 <>
-                  <pre className="preWidth">{key}*:</pre>
+                  <pre key={key} className="preWidth">{key}*:</pre>
                   <div>
                     <pre>{value[0]}</pre>
                     <p>{value[1]}</p>
@@ -59,7 +59,7 @@ export default function ReqResBody({ Request, Response }) {
                   const startIdx = item.length > 3 ? 3 : item.length;
 
                   return (
-                    <div className="req-res-data">
+                    <div key={i} className="req-res-data">
                       <pre className="preWidth">{item[0]}:</pre>
 
                       <div>
@@ -101,7 +101,7 @@ export default function ReqResBody({ Request, Response }) {
                   const startIdx = item.length > 3 ? 3 : item.length;
 
                   return (
-                    <div className="req-res-data">
+                    <div key={i} className="req-res-data">
 
                       <pre className="preWidth">{item[0]}:</pre>
                       <div >
