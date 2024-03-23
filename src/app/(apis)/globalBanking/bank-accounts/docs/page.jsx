@@ -891,7 +891,7 @@ export default function ApiDocsPage() {
 
         {/* create bank*/}
         <div id="create-bank" className="section">
-          <h3>8. Create bank</h3>
+          <h3>3. Create bank</h3>
           <p>This endpoint is used to create a new bank account with the provided bank data. This endpoint requires authentication using a fintact admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as FINTRACT_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -949,7 +949,7 @@ export default function ApiDocsPage() {
 
         {/*update bank */}
         <div id="update-bank" className="section">
-          <h3>8. Update bank</h3>
+          <h3>4. Update bank</h3>
           <p>This endpoint takes bank data & updates it. This endpoint requires authentication using a fintact admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as FINTRACT_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1007,7 +1007,7 @@ export default function ApiDocsPage() {
 
         {/* verify bank*/}
         <div id="verify-bank" className="section">
-          <h3>8. Verify bank</h3>
+          <h3>5. Verify bank</h3>
           <p>This endpoint is used to mark bank information as verified. This endpoint requires authentication using a fintract-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as FINTRACT_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1047,7 +1047,7 @@ export default function ApiDocsPage() {
 
         {/* all registered bankaccounts */}
         <div id="bank-accounts" className="section">
-          <h3>3. Get all bank accounts</h3>
+          <h3>6. Get all bank accounts</h3>
           <p>This endpoint retrieves a list of all bank accounts.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1124,7 +1124,7 @@ export default function ApiDocsPage() {
 
         {/* all registered bank admins' bankaccounts */}
         <div id="bank-admins-accounts" className="section">
-          <h3>3. Get all bank-admins' bank accounts</h3>
+          <h3>7. Get all bank-admins' bank accounts</h3>
           <p>This endpoint retrieves a list of all bank admins' bank accounts.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as FINTRACT_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1183,7 +1183,7 @@ export default function ApiDocsPage() {
 
         {/* createbank admins' bankaccounts incomplete*/}
         <div id="create-bank-admin-account" className="section">
-          <h3>3. Create bank account for bank-admin</h3>
+          <h3>8. Create bank account for bank-admin</h3>
           <p>This endpoint allows the creation of a bank admin account. Only users with the role FINTRACT_ADMIN can call this endpoint</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as FINTRACT_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1221,7 +1221,7 @@ export default function ApiDocsPage() {
 
         {/* bank admin all bankaccounts */}
         <div id="bank-admin-accounts" className="section">
-          <h3>4. Get bank-admin's bank accounts</h3>
+          <h3>9. Get bank-admin's bank accounts</h3>
           <p>This endpoint retrieves a list of all bank accounts of bank-admin.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1266,7 +1266,7 @@ export default function ApiDocsPage() {
 
         {/* all bank admins */}
         <div id="bank-admins" className="section">
-          <h3>6. Get all bank-admins</h3>
+          <h3>10. Get all bank-admins</h3>
           <p>This endpoint retrieves a list of all bank administrators. Only users with the role FINTRACT_ADMIN can call this endpoint.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as FINTRACT_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1319,7 +1319,7 @@ export default function ApiDocsPage() {
 
         {/* all customers of bank*/}
         <div id="bank-customers" className="section">
-          <h3>7. Get all customers</h3>
+          <h3>11. Get all customers</h3>
           <p>This endpoint retrieves a list of all customers associated with the bank. This endpoint requires authentication using a bank admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1378,7 +1378,7 @@ export default function ApiDocsPage() {
 
         {/* get bank branches of authenticated bank admin*/}
         <div id="bank-branches" className="section">
-          <h3>7. Get bank branches of authenticated bank-admin</h3>
+          <h3>12. Get bank branches of authenticated bank-admin</h3>
           <p>This endpoint returns all the branches of a bank associated with the provided bank-admin. This endpoint requires authentication using a bank admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1428,7 +1428,7 @@ export default function ApiDocsPage() {
 
         {/*get interest rates of a particular bank */}
         <div id="interest-rates" className="section">
-          <h3>7. Get interest rates of a particular bank </h3>
+          <h3>13. Get interest rates of a particular bank </h3>
           <p>This endpoint returns all interest rates associated with the provided Bank ID.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as FINTRACT_ADMIN, BANK_ADMIN or CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1472,7 +1472,7 @@ export default function ApiDocsPage() {
 
         {/*add interest rate*/}     
         <div id="add-interest-rate" className="section">
-          <h3>7. Add interest rate </h3>
+          <h3>14. Add interest rate </h3>
           <p>This endpoint is used to add interest rate information for a bank. This endpoint requires authentication using a bank admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1520,7 +1520,7 @@ export default function ApiDocsPage() {
 
         {/*create bank account*/}
         <div id="create-bank-account" className="section">
-          <h3>7. Create bank account</h3>
+          <h3>15. Create bank account</h3>
           <p>This endpoint is used to create a new bank account with the provided bank account data. This endpoint requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1565,7 +1565,7 @@ export default function ApiDocsPage() {
 
         {/*apply for card */}
         <div id="card-apply" className="section">
-          <h3>7. Apply for card</h3>
+          <h3>16. Apply for card</h3>
           <p>This endpoint is used to apply for a new card by providing the account number and card details. Only customer users can call this endpoint.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1604,7 +1604,7 @@ export default function ApiDocsPage() {
 
          {/*get all card applications*/}
         <div id="card-applications" className="section">
-          <h3>7. Get all card applications</h3>
+          <h3>17. Get all card applications</h3>
           <p>This endpoint returns all card applications for a particular bank. Only bank-admin users can call this endpoint.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1656,7 +1656,7 @@ export default function ApiDocsPage() {
 
         {/*get user's card applications */} 
         <div id="user-card-applications" className="section">
-          <h3>7. Get user's card applications</h3>
+          <h3>18. Get user's card applications</h3>
           <p>This endpoint returns all card applications for a particular user.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1702,7 +1702,7 @@ export default function ApiDocsPage() {
 
         {/*get excahnge rate*/}
         <div id="exchange-rates" className="section">
-          <h3>7. Get exchange rates</h3>
+          <h3>19. Get exchange rates</h3>
           <p>This endpoint retrieves the exchange rate of a bank. Only bank-admin users can access this endpoint. This endpoint requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1743,7 +1743,7 @@ export default function ApiDocsPage() {
         {/*add exchange rate */}
         <div id="add-exchange-rates" className="section">
 
-          <h3>7. Add exchange rates</h3>
+          <h3>20. Add exchange rates</h3>
           <p>This endpoint allows the addition of exchange rates for a bank by uploading a CSV file containing currency and exchange rate columns. This endpoint requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1776,7 +1776,7 @@ export default function ApiDocsPage() {
 
         {/*update excahnge rate*/}
         <div id="update-exchange-rates" className="section">
-        <h3>7. Update exchange rates</h3>
+        <h3>21. Update exchange rates</h3>
         <p>This endpoint is used to update the exchange rate of a bank. Only bank-admin users can access this endpoint. This endpoint requires authentication using a bank-admin's access token.</p>
         <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1820,7 +1820,7 @@ export default function ApiDocsPage() {
 
         {/*add payee*/}
         <div id="add-payee" className="section">
-        <h3>7. Add payee</h3>
+        <h3>22. Add payee</h3>
         <p>This endpoint allows authenticated customers to add a payee. This endpoint requires authentication using a customer's access token.</p>
         <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1863,7 +1863,7 @@ export default function ApiDocsPage() {
 
         {/*get all payees */}
         <div id="payees" className="section">
-        <h3>7. Get all payees</h3>
+        <h3>23. Get all payees</h3>
         <p>This endpoint gets a list of payees of a customer. This requires authentication using a customer's access token.</p>
         <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1903,7 +1903,7 @@ export default function ApiDocsPage() {
 
         {/*get all account creation requests */}
         <div id="account-creation-requests" className="section">
-        <h3>7. Get all account creation requests</h3>
+        <h3>24. Get all account creation requests</h3>
         <p>This endpoint retrieves all account creation requests of a particular bank. This requires authentication using a bank-admin's access token.</p>
         <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -1959,7 +1959,7 @@ export default function ApiDocsPage() {
 
         {/*request for bank account */}
         <div id="request-bank-account" className="section">
-          <h3>7. Request for bank account</h3>
+          <h3>25. Request for bank account</h3>
           <p>This endpoint allows users to request account creation to a bank-admin. This requires authentication using a customer's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2001,7 +2001,7 @@ export default function ApiDocsPage() {
 
         {/*activate bank account */}
         <div id="activate-bank-account" className="section">
-          <h3>7. Activate bank account</h3>
+          <h3>26. Activate bank account</h3>
           <p>This endpoint allows bank-admin to activate an account for usage by providing the account number.. This requires authentication using a bank_admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2036,7 +2036,7 @@ export default function ApiDocsPage() {
 
         {/*suspend bank account */}
         <div id="suspend-bank-account" className="section">
-          <h3>7. Suspend bank account</h3>
+          <h3>27. Suspend bank account</h3>
           <p>This endpoint allows bank-admin to suspend an account for usage by providing the account number. This requires authentication using a bank_admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2071,7 +2071,7 @@ export default function ApiDocsPage() {
 
         {/*delete bank account */}
         <div id="delete-bank-account" className="section">
-          <h3>7. Delete bank account</h3>
+          <h3>28. Delete bank account</h3>
           <p>This endpoint allows authenticated users to delete a bank account by providing the bank account ID. This requires authentication using a customer's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2104,7 +2104,7 @@ export default function ApiDocsPage() {
 
         {/*get credit debit statement */}
         <div id="statements" className="section">
-          <h3>7. Get credit/debit statements</h3>
+          <h3>29. Get credit/debit statements</h3>
           <p>This endpoint retrieves the credit/debit statement of a bank account. This requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2138,7 +2138,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*get transaction report */}
         <div id="transaction-report" className="section">
-          <h3>7. Get transaction report</h3>
+          <h3>30. Get transaction report</h3>
           <p>This endpoint retrieves a transaction report, which includes various categories of transactions. This requires authentication using a customer's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2176,7 +2176,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*get all transaction report of a bank */}
         <div id="bank-transaction-report" className="section">
-          <h3>7. Get transaction report of a bank</h3>
+          <h3>31. Get transaction report of a bank</h3>
           <p>Retrieves the transaction report of a bank. Only bank-admin users can access this endpoint. This requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2247,7 +2247,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*get all transactions of user */}
         <div id="user-transactions" className="section">
-          <h3>7. Get all transactions of user</h3>
+          <h3>32. Get all transactions of user</h3>
           <p>This endpoint retrieves all transactions of the authenticated customer. This requires authentication using a customer's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2306,7 +2306,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*get all transactions of user in a year */}
         <div id="user-yearwise-transactions" className="section">
-          <h3>7. Get all transactions of user yearwise</h3>
+          <h3>33. Get all transactions of user yearwise</h3>
           <p>This endpoint retrieves all transactions of the authenticated customer yearwise. This requires authentication using a customer's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2365,7 +2365,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*transfer money*/}
         <div id="transfer-money" className="section">
-          <h3>7. Transfer money</h3>
+          <h3>34. Transfer money</h3>
           <p>This endpoint is used to send money from one customer account to another. This requires authentication using a customer's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2405,7 +2405,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*fund account */}
         <div id="fund_account" className="section">
-          <h3>7. Fund account</h3>
+          <h3>35. Fund account</h3>
           <p>This endpoint is used to fund a particular customer account. Only Bank_Admin users can call this API. This requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2445,7 +2445,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*fund ledger */}
         <div id="fund_ledger" className="section">
-          <h3>7. Fund ledger</h3>
+          <h3>36. Fund ledger</h3>
           <p>This endpoint facilitates the funding of a bank's ledger account. Only Fintract-admin users can call this API. This requires authentication using a fintract-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as FINTRACT_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
@@ -2485,7 +2485,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
 
         {/*get ledger account transactions */}
         <div id="ledger-transactions" className="section">
-          <h3>7. Get ledger account transactions</h3>
+          <h3>37. Get ledger account transactions</h3>
           <p>This endpoint retrieves the transaction list of a bank's ledger account. This requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 
