@@ -119,8 +119,12 @@ export default function RootLayout({ children }) {
                     {menuOpen && (
                         <div>
                             <ul>
-                                <li><Link href="/">Home</Link></li>
-                                <li><Link href="/introduction">APIs</Link></li>
+                                <li><Link href="/" onClick={() => {
+                                    closeMenu();
+                                }}>Home</Link></li>
+                                <li><Link href="/introduction" onClick={() => {
+                                    closeMenu();
+                                }}>APIs</Link></li>
                                 <li><div onClick={() => {
                                     setProductsOpen(true);
                                     setMenuOpen(false);
@@ -148,12 +152,24 @@ export default function RootLayout({ children }) {
 
                             </div>
                             <ul>
-                                <li><Link href="/globalBanking">Global Banking</Link></li>
-                                <li><Link href="#">Fraudify</Link></li>
-                                <li><Link href="#">B2B Payment</Link></li>
-                                <li><Link href="#">Finalytics</Link></li>
-                                <li><Link href="#">Chatbot</Link></li>
-                                <li><Link href="#">Transaction Monitoring</Link></li>
+                                <li><Link href="/globalBanking/overview" onClick={() => {
+                                    closeMenu();
+                                }}>Global Banking</Link></li>
+                                <li><Link href="#" onClick={() => {
+                                    closeMenu();
+                                }}>Fraudify</Link></li>
+                                <li><Link href="#" onClick={() => {
+                                    closeMenu();
+                                }}>B2B Payment</Link></li>
+                                <li><Link href="#" onClick={() => {
+                                    closeMenu();
+                                }}>Finalytics</Link></li>
+                                <li><Link href="#" onClick={() => {
+                                    closeMenu();
+                                }}>Chatbot</Link></li>
+                                <li><Link href="#" onClick={() => {
+                                    closeMenu();
+                                }}>Transaction Monitoring</Link></li>
                             </ul>
 
                         </div>
@@ -171,7 +187,9 @@ export default function RootLayout({ children }) {
 
                             </div>
                             <ul>
-                                <li><Link href="/apiTester">API Testing</Link></li>
+                                <li><Link target="_blank" href="/apiTester" onClick={() => {
+                                    closeMenu();
+                                }}>API Testing</Link></li>
 
                             </ul>
 

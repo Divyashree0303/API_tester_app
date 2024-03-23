@@ -259,6 +259,25 @@ export default function ApiDocsPage() {
             keyValue: [["message", "string", "Account Successfully Updated"]],
         }
     }
+
+    const uploadFileRequest = {
+        header: {
+            Authorization: ["string", "Bearer access token for authorization"]
+        },
+        body: {
+            type: "multipart/form-data",
+            keyValue: [
+            ["file*", "file", "file to be uploaded"]]
+        }
+    }
+
+    const uploadFileResponse = {
+        code: "201",
+        body: {
+            type: "application/json",
+            keyValue: [["url", "string", "URL of the uploaded file"]],
+        }
+    }
     
 
 
@@ -604,7 +623,7 @@ export default function ApiDocsPage() {
                 </div>
 
                 {/*resend verification mail */}
-                <div id="reverfication-mail" className="section">
+                <div id="resend-verification-mail" className="section">
                     <h3>8. Resend Verification Mail</h3>
                     <p>Initiates the process to re-verify a user's email address. This is typically used when an email address needs to be re-confirmed for security reasons.</p>
                     <p>Takes email and resends verification mail with token.</p>
@@ -761,6 +780,41 @@ export default function ApiDocsPage() {
                             <h4>Sample Response</h4>
                             <SampleResponse responseCode="200" responseType="application/json" sampleResponse={`{
     "msg": "Account Successfully Updated"
+}`} />
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div className="note">
+                        <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+                    </div>
+
+                </div>
+
+                {/*upload file */}
+                <div id="upload-file" className="section">
+                    <h3>12. Upload file</h3>
+                    <p>This endpoint takes file and uploads it & returns file url</p>
+                    <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to login as CUSTOMER to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
+
+                    <h4>Endpoint</h4>
+                    <Endpoint details="/auth/upload/" method="POST" />
+
+                    <div className="sample">
+
+                        <ReqResBody Request={uploadFileRequest} Response={uploadFileResponse} />
+
+                        <div>
+                            <h4>Sample Request</h4>
+                            <SampleRequest requestType="multipart/form-data" sampleRequest="passport.pdf" />
+
+
+                            <h4>Sample Response</h4>
+                            <SampleResponse responseCode="201" responseType="application/json" sampleResponse={`{
+    "url": "https://openbankingapp.s3.amazonaws.com/c3510aee.csv"
 }`} />
 
                         </div>

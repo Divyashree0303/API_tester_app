@@ -1,20 +1,21 @@
 /* Layout.module.css */
 
 .main{
-    height: 100%;
-    position: relative;
-    min-height: 65vh;
- /* top: 65px; */
+    /* height: 100%; */
+    /* position: relative;
+    min-height: 65vh; */
+ top: 65px;
 }
 
 .sub-container {
     display: flex;
-    /* position: relative; */
+    position: relative;
 }
 
 .sub-main{
     min-width: 0;
-    flex-grow: 1;
+    flex: 1;
+    width: calc(100% - 270px);
     border-left: 1.5px solid #ddd;
 }
 
@@ -41,9 +42,15 @@
 
 .sidebar {
     flex: 0 0 250px; /* Sidebar with a fixed width of 250px */
-    min-width: 250px;
+    /* min-width: 250px; */
     padding: 0 0 0 20px;
-    height: 100%;
+    position: sticky;
+    left: 0;
+    top: 65px;
+    width: 250px;
+    height: 100vh;
+    height: calc(100vh - 65px); /* Adjust to match the remaining height */
+    overflow-y: auto;
     
 }
 /* .subSidebar{
@@ -174,6 +181,7 @@
     .toggleButtonXmark{
         position: absolute;
         right: 20px;
+        top:25px;
     }
 
     .sidebar{
@@ -182,7 +190,6 @@
         position: fixed;
         top: 65px;
         left: 0;
-        overflow-y: scroll;
         background-color: white;
         padding: 0;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -192,6 +199,8 @@
 	-ms-transition: all 600ms ease;
 	-o-transition: all 600ms ease;
 	transition: all 600ms ease;
+    height: calc(100vh - 65px); /* Adjust to match the remaining height */
+    overflow-y: auto;
 
     }
 
@@ -206,7 +215,7 @@
 
     .sidebarList {
         list-style-type: none;
-        padding: 0;
+        padding: 20px;
         margin: 15px auto;
     }
 

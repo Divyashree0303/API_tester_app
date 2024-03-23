@@ -12,7 +12,7 @@ export default function Layout({ children }) {
 
     return (
         
-            <main className="sub-main">{children}</main>
+            <main>{children}</main>
 
     );
 }

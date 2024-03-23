@@ -1,12 +1,76 @@
 "use client"
-import "./styles.css";
 import Link from 'next/link';
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons'
+import ReqResBody from "../../../../_components/req-res/page"
+import Endpoint from "../../../../_components/endpoint/page"
+import SampleRequest from "../../../../_components/sample/request"
+import SampleResponse from "../../../../_components/sample/response"
 
 
 export default function ApiDocsPage() {
+
+    const registrationRequest = {
+        body:{
+          type:"application/json",
+          keyValue:[["contactNo*", "string","Contact number of user"],
+          ["firstName*", "string","First name"],
+          ["middleName", "string","Middle name"],
+          ["lastName*", "string","Last name"],
+          ["dob*", "string","Date of birth yyyy-mm-dd"],
+          ["gender", "string","Gender"],
+          ["cityName", "string","Name of the city"],
+          ["countryName", "string","Name of the country"],
+          ["pinCode", "string","Address pincode"]]
+        }
+      }
+    
+      const registrationResponse = {
+        code: "201",
+        body: {
+          type: "application/json",
+          keyValue: [['user_registered',"string","True if registered"]]
+        }
+      }
+
+      const verificationRequest = {
+        params:{
+            id:["string","User ID"]
+        },
+        body:{
+          type:"multipart/form-data",
+          keyValue:[["idImageFront*", ".jpeg/png file","Image of front of user ID"]]
+        }
+      }
+    
+      const verificationResponse = {
+        code: "201",
+        body: {
+          type: "application/json",
+          keyValue: [['msg',"string","Success!"],
+            ['data',"object","Object conatining verification data",["contactNo","string"]
+            ,["kycVerified","boolean"],["nameVerified","boolean"],["placeVerified","boolean"],["dobVerified","boolean"]]]
+        }
+      }
+
+      const faceverificationRequest = {
+        params:{
+            id:["string","User ID"]
+        },
+        body:{
+          type:"multipart/form-data",
+          keyValue:[["idImageFront*", ".jpeg/png file","Image of front of user ID"],["userPhoto*", ".jpeg/png file","Image of user's photo"]]
+        }
+      }
+    
+      const faceverificationResponse = {
+        code: "201",
+        body: {
+          type: "application/json",
+          keyValue: [['msg',"string","Success!"],
+            ['data',"object","Object conatining verification data",["contactNo","string"],["faceVerified","boolean"]]]
+        }
+      }
 
     const handleCopy = (text) => {
         navigator.clipboard.writeText(text)
@@ -20,7 +84,7 @@ export default function ApiDocsPage() {
         <div >
 
 
-            <div className="kyc-container">
+            <div className="api-container">
 
                 <h2>KYC API</h2>
 
@@ -40,28 +104,22 @@ export default function ApiDocsPage() {
 
                 </div>
 
-                {/* Tokenize API section */}
+                {/* user registartion*/}
                 <div id="registerUser" className="section">
                     <h3>1. User Registration</h3>
                     <p>This endpoint registers a new user.</p>
 
                     <h4>Endpoint</h4>
-                    <div className="endpoint">
-                        <div className="method post">POST</div>
-                        <p className="details"> /userRegistration/</p>
+
+                    <Endpoint details="/userRegistration/" method="POST" />
+
+                    <div className="sample">
+
+                        <ReqResBody Request={registrationRequest} Response={registrationResponse} />
+
                         <div>
-                            <FontAwesomeIcon icon={faCopy} className="copyButtonURI" onClick={() => handleCopy("/userRegistration/")} />
-                        </div>
-
-
-                    </div>
-
-                    <h4>Request</h4>
-
-                    <div className="codeSnippet">
-
-
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`curl -X POST -H "Content-Type: application/json" -d '{
+                            <h4>Sample Request</h4>
+                            <SampleRequest requestType="application/json" sampleRequest={`{
     "contactNo": "1234567890",
     "firstName": "John",
     "middleName": "D",
@@ -71,40 +129,15 @@ export default function ApiDocsPage() {
     "cityName": "New York",
     "countryName": "USA",
     "pinCode": "100010"
-}' https://api.kyc.fintractglobal.com/userRegistration/
-`)} />
-
-                        <pre className="code">
-                            {`curl -X POST -H "Content-Type: application/json" -d '{
-    "contactNo": "1234567890",
-    "firstName": "John",
-    "middleName": "D",
-    "lastName": "Doe",
-    "dob": "1990-01-01",
-    "gender": "Male",
-    "cityName": "New York",
-    "countryName": "USA",
-    "pinCode": "100010"
-}' https://api.kyc.fintractglobal.com/userRegistration/
-`}
-                        </pre>
-                    </div>
+}`} />
 
 
-                    <h4>Response</h4>
-                    <div className="codeSnippet">
-
-                        <p>Success:</p>
-
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`{
-     "user_registered": true
-}` )} />
-
-                        <pre className="code">
-                            {`{
+                            <h4>Sample Response</h4>
+                            <SampleResponse responseCode="201" responseType="application/json" sampleResponse={`{
     "user_registered": true
-}`}
-                        </pre>
+}`} />
+
+                        </div>
                     </div>
 
                     <div className="note">
@@ -117,43 +150,21 @@ export default function ApiDocsPage() {
                     <p>This endpoint verifies a user's identity using the KYC process with ID image.</p>
 
                     <h4>Endpoint</h4>
-                    <div className="endpoint">
-                        <div className="method post">POST</div>
-                        <p className="details">  /userVerification/&#123;id&#125;</p>
-                        <FontAwesomeIcon icon={faCopy} className="copyButtonURI" onClick={() => handleCopy(" /userVerification/{id}")} />
-                    </div>
 
-                    <h4>Request</h4>
+                    <Endpoint details="/userVerification/{id}" method="POST" />
 
-                    <div className="codeSnippet">
 
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`curl -X POST 
-                        -H "Content-Type: multipart/form-data" 
-                        -F "idImageFront=@/path/to/idImageFront.jpg" 
-                        https://api.kyc.fintractglobal.com/userVerification/1234567890
-`)} />
+                    <div className="sample">
 
-                        <pre className="code">
-                            {`curl -X POST 
--H "Content-Type: multipart/form-data" 
--F "idImageFront=@/path/to/idImageFront.jpg" 
-https://api.kyc.fintractglobal.com/userVerification/1234567890`}
-                        </pre>
-                    </div>
+                        <ReqResBody Request={verificationRequest} Response={verificationResponse} />
 
-                    <h4>Parameters</h4>
-                    <div>
-                        <ul>
-                            <li>idImageFront: Front image of the user's ID card (required)</li>
-                        </ul>
-                    </div>
+                        <div>
+                            <h4>Sample Request</h4>
+                            <SampleRequest requestType="multipart/form-data" sampleRequest="idImageFront=@/path/to/idImageFront.jpg" />
 
-                    <h4>Response</h4>
-                    <div className="codeSnippet">
 
-                        <p>Success:</p>
-
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`{
+                            <h4>Sample Response</h4>
+                            <SampleResponse responseCode="201" responseType="application/json" sampleResponse={`{
     "msg": "Success!",
     "data": {
         "contactNo": "1234567890",
@@ -162,22 +173,9 @@ https://api.kyc.fintractglobal.com/userVerification/1234567890`}
         "placeVerified": true,
         "dobVerified": true
     }
-}
-`)} />
+}`} />
 
-                        <pre className="code">
-                            {`{
-    "msg": "Success!",
-    "data": {
-        "contactNo": "1234567890",
-        "kycVerified": true,
-        "nameVerified": true,
-        "placeVerified": true,
-        "dobVerified": true
-    }
-}
-`}
-                        </pre>
+                        </div>
                     </div>
 
                     <div className="note">
@@ -191,43 +189,20 @@ https://api.kyc.fintractglobal.com/userVerification/1234567890`}
                     <p>This endpoint verifies a user's identity using the KYC process with a passport image.</p>
 
                     <h4>Endpoint</h4>
-                    <div className="endpoint">
-                        <div className="method post">POST</div>
-                        <p className="details">  /userVerificationPass/&#123;id&#125;</p>
-                        <FontAwesomeIcon icon={faCopy} className="copyButtonURI" onClick={() => handleCopy(" /userVerificationPass/{id}")} />
-                    </div>
+                    <Endpoint details="/userVerificationPass/{id}" method="POST" />
 
-                    <h4>Request</h4>
 
-                    <div className="codeSnippet">
+                    <div className="sample">
 
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`curl -X POST 
--H "Content-Type: multipart/form-data"
--F "idImageFront=@/path/to/passport.jpg"
-https://api.kyc.fintractglobal.com/userVerificationPass/1234567890
-`)} />
+                        <ReqResBody Request={verificationRequest} Response={verificationResponse} />
 
-                        <pre className="code">
-                            {`curl -X POST 
--H "Content-Type: multipart/form-data"
--F "idImageFront=@/path/to/passport.jpg"
-https://api.kyc.fintractglobal.com/userVerificationPass/1234567890`}
-                        </pre>
-                    </div>
+                        <div>
+                            <h4>Sample Request</h4>
+                            <SampleRequest requestType="multipart/form-data" sampleRequest="idImageFront=@/path/to/idImageFront.jpg" />
 
-                    <h4>Parameters</h4>
-                    <div>
-                        <ul>
-                            <li>idImageFront: Front image of the user's passport (required)</li>
-                        </ul>
-                    </div>
 
-                    <h4>Response</h4>
-                    <div className="codeSnippet">
-
-                        <p>Success:</p>
-
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`{
+                            <h4>Sample Response</h4>
+                            <SampleResponse responseCode="201" responseType="application/json" sampleResponse={`{
     "msg": "Success!",
     "data": {
         "contactNo": "1234567890",
@@ -236,23 +211,11 @@ https://api.kyc.fintractglobal.com/userVerificationPass/1234567890`}
         "placeVerified": true,
         "dobVerified": true
     }
-}
-`)} />
+}`} />
 
-                        <pre className="code">
-                            {`{
-    "msg": "Success!",
-    "data": {
-        "contactNo": "1234567890",
-        "kycVerified": true,
-        "nameVerified": true,
-        "placeVerified": true,
-        "dobVerified": true
-    }
-}
-`}
-                        </pre>
+                        </div>
                     </div>
+
 
                     <div className="note">
                         <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
@@ -265,64 +228,28 @@ https://api.kyc.fintractglobal.com/userVerificationPass/1234567890`}
                     <p>This endpoint verifies a user's face using face recognition.</p>
 
                     <h4>Endpoint</h4>
-                    <div className="endpoint">
-                        <div className="method post">POST</div>
-                        <p className="details">  /faceVerification/&#123;id&#125;</p>
-                        <FontAwesomeIcon icon={faCopy} className="copyButtonURI" onClick={() => handleCopy(" /faceVerification/{id}")} />
-                    </div>
+                    <Endpoint details="/faceVerification/{id}" method="POST" />
 
-                    <h4>Request</h4>
+                    <div className="sample">
 
-                    <div className="codeSnippet">
+                        <ReqResBody Request={faceverificationRequest} Response={faceverificationResponse} />
 
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`curl -X POST 
--H "Content-Type: multipart/form-data" 
--F "idImageFront=@/path/to/idImageFront.jpg" 
--F "userPhoto=@/path/to/userPhoto.jpg"
-https://api.kyc.fintractglobal.com/faceVerification/1234567890
-`)} />
+                        <div>
+                            <h4>Sample Request</h4>
+                            <SampleRequest requestType="multipart/form-data" sampleRequest={`idImageFront=@/path/to/idImageFront.jpg,
+userPhoto=@/path/to/userPhoto.jpg`} />
 
-                        <pre className="code">
-                            {`curl -X POST 
--H "Content-Type: multipart/form-data" 
--F "idImageFront=@/path/to/idImageFront.jpg" 
--F "userPhoto=@/path/to/userPhoto.jpg"
-https://api.kyc.fintractglobal.com/faceVerification/1234567890`}
-                        </pre>
-                    </div>
 
-                    <h4>Parameters</h4>
-                    <div>
-                        <ul>
-                            <li>idImageFront: Front image of the user's ID card (required)</li>
-                            <li>userPhoto: User's selfie photo (required)</li>
-                        </ul>
-                    </div>
-
-                    <h4>Response</h4>
-                    <div className="codeSnippet">
-
-                        <p>Success:</p>
-
-                        <FontAwesomeIcon icon={faCopy} className="copyButton" onClick={() => handleCopy(`{
+                            <h4>Sample Response</h4>
+                            <SampleResponse responseCode="201" responseType="application/json" sampleResponse={`{
     "msg": "Success!",
     "data": {
         "contactNo": "1234567890",
         "faceVerified": true
     }
-}
-`)} />
+}`} />
 
-                        <pre className="code">
-                            {`{
-    "msg": "Success!",
-    "data": {
-        "contactNo": "1234567890",
-        "faceVerified": true
-    }
-}
-`}
-                        </pre>
+                        </div>
                     </div>
 
                     <div className="note">

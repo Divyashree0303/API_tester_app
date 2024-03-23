@@ -6,8 +6,14 @@ import "./styles.css";
 import React from 'react';
 
 const apiCollections = [
+  { name: 'Auth', purpose: 'Provides functionalities for user authentication within the system', url:"/globalBanking/auth/docs" },
+  { name: 'Bank accounts', purpose: 'Manage operations related to bank accounts, including creation, deletion, transactions, and inquiries', url:"/globalBanking/bank-accounts/docs" },
+  { name: 'Get access token', purpose: 'Obtain an access token for accessing protected resources', url:"/globalBanking/api/docs" },
+  { name: 'KYC', purpose: 'Register user and verify identity using ID, passport and face', url:"/globalBanking/kyc/docs" },
+  { name: 'Payment schedular', purpose: 'Manage scheduled payments for bank accounts', url:"/globalBanking/payment-schedular/docs" },
+  { name: 'Support ticket', purpose: 'Manage support tickets for customer inquiries and issue resolution', url:"/globalBanking/support-ticket/docs" },
   { name: 'Tokenization', purpose: 'Tokenize and detokenize sensitive information securely', url:"/globalBanking/tokenization/docs" },
-  { name: 'KYC', purpose: 'Register user and verify identity using ID, passport and face', url:"/globalBanking/kyc/docs" }
+  { name: 'Transaction monitoring', purpose: 'Monitor and analyze transactions for suspicious or fraudulent activities', url:"/globalBanking/transaction-monitoring/docs" }
  
 ];
 
