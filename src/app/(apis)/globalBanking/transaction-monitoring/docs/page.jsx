@@ -62,22 +62,21 @@ export default function ApiDocsPage() {
     }
   }
 
-  const updateSupportTicketRequest = {
+  const uploadDataRequest = {
     header: {
       Authorization: ["string", "Bearer access token for authorization."]
     },
     body: {
-      type: "application/json",
-      keyValue: [["ticketId","string","ID of suppotr ticket"],
-      ["status","string Enum: [APPROVED,PENDING APPROVAL, UNDER INVESTIGATION, UNDER REVEIW, CLOSED, REOPEN]","Status of support ticket"]]
+      type: "multipart/form-data",
+      keyValue: [["file", ".csv file", "file containing list of payment details"]]
     }
   }
 
-  const updateSupportTicketResponse = {
+  const uploadDataResponse = {
     code: "200",
     body: {
       type: "application/json",
-      keyValue: [["msg", "string", "Ticket added successfully"]]
+      keyValue: [["url", "string", "URL of uploaded data"]]
     }
   }
 
@@ -276,8 +275,9 @@ export default function ApiDocsPage() {
 
         </div>
 
-        {/*upload monitoring data  incomplete*/}
+        {/*upload monitoring data */}
         <div id="upload-monitoring-data" className="section">
+
           <h3>4. Upload monitoring data</h3>
           <p>This endpoint enables you to upload a file, typically containing transaction data, for processing within the transaction monitoring system. This requires authentication using a bank-admin's access token.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You need to specifically login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
@@ -288,7 +288,7 @@ export default function ApiDocsPage() {
 
           <div className="sample">
 
-            <ReqResBody Request={monitorSearchBulkRequest} Response={monitorSearchBulkResponse} />
+            <ReqResBody Request={uploadDataRequest} Response={uploadDataResponse} />
 
             <div>
               <h4>Sample Request</h4>
@@ -297,7 +297,7 @@ export default function ApiDocsPage() {
 
               <h4>Sample Response</h4>
               <SampleResponse responseCode="200" responseType="application/json" sampleResponse={`{
-    "msg": "Ticket Updated"
+    "url": string
 }`} />
 
             </div>
@@ -312,4 +312,5 @@ export default function ApiDocsPage() {
       </div>
     </div>
   );
+
 }
