@@ -1,0 +1,56 @@
+.dropdown-menu {
+    padding-left: 26px;
+    margin-top: 5px;
+  }
+  
+  .product-details {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .dropdown-button {
+    margin-right: 10px;
+  }
+  
+  .product-actions {
+    margin-left: auto;
+  }
+  
+  .action-button {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* .add-button {
+    background-color: #0070ba;
+    color: #fff;
+    border: none;
+    width: auto;
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #005688;
+  }
+  
+  button {
+    width:auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0070ba;
+  }
+   */

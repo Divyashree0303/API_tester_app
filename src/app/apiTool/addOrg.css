@@ -1,0 +1,93 @@
+/* Modal Styles */
+.modal {
+    display: none; /* Hide modal by default */
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* Ensure modal is on top of other content */
+  }
+  
+  .modal.open {
+    display: block; /* Display modal when open */
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Adjust width as needed */
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .error-message {
+    color: red; /* Error message color */
+    font-size: 14px; /* Font size */
+    margin-top: 5px; /* Margin from the top */
+  }
+  
+
+  .button-div{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width:100px;
+  }
+
+  .save-button{
+    border:none;
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .save-button:hover{
+    background-color: #0056b3;
+  }
+  
+  .cancel-button{
+    border: 1px solid #ccc;
+  }
+  
+  @media (max-width: 768px) {
+    /* Adjust modal width for smaller screens */
+    .modal-content {
+      max-width: 80%;
+    }
+  }

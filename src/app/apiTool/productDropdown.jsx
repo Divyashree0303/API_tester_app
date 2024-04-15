@@ -1,0 +1,150 @@
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt, faPlus, faChevronDown, faChevronUp,faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import "./productDropdown.css"
+import ProdDeleteModal from "./prodDeleteModal"
+import EditProductModal from "./editProductModal"
+import AddProductModal from "./addProduct"
+
+const ProductDropdown = ({ products, setProducts, orgId }) => {
+
+  const [selectedProducts, setSelectedProducts] = useState({});
+  const [editProdModalOpen, setEditProdModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [prodDeleteModalOpen, setProdDeleteModalOpen] = useState(false);
+  const [productToDelete, setProductToDelete] = useState(null);
+  const [displayAddProductModal,setDisplayAddProductModal]=useState(false)
+
+
+  const handleAddProduct= () => {
+    setDisplayAddProductModal(true);
+
+}
+
+  const toggleProductDropdown = (productId) => {
+    setSelectedProducts(prevState => ({
+      ...prevState,
+      [productId]: !prevState[productId]
+    }));
+  };
+
+  const openProdEditModal = (product) => {
+    setSelectedProduct(product);
+    setEditProdModalOpen(true);
+    console.log(editProdModalOpen, selectedProduct);
+  };
+
+  const closeEditModal = () => {
+    setEditProdModalOpen(false);
+    setSelectedProduct(null);
+  };
+
+  const openProdDeleteModal = (product) => {
+    setProductToDelete(product);
+    setProdDeleteModalOpen(true);
+  };
+
+  const closeProdDeleteModal = () => {
+    setProdDeleteModalOpen(false);
+    setProductToDelete(null);
+  };
+
+  const onUpdateProductName = (updatedProduct) => {
+    const index = products.findIndex(product => product._id === updatedProduct._id);
+   
+    if (index !== -1) {
+      const updatedProducts = [...products];
+      updatedProducts[index] = updatedProduct;
+      setProducts(updatedProducts);
+    }else{
+      const updatedProducts = [...products,updatedProduct];
+      setProducts(updatedProducts);
+    }
+
+  };
+
+  const onDeleteProduct = async () => {
+    try {
+      setProdDeleteModalOpen(false);
+      // Perform deletion logic here, such as calling the backend API to delete the organization
+      const response = await fetch(`/api/products?productId=${productToDelete._id}`, {
+        method: 'DELETE'
+      });
+      if (response.ok) {
+        // Remove the deleted organization from the list
+        const updatedProducts = products.filter(org => org._id !== productToDelete._id);
+        setProducts(updatedProducts);
+      } else {
+        console.error('Failed to delete product');
+      }
+
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  };
+
+
+  return (
+    <div className="dropdown-menu">
+      <ul>
+        {products.map(product => (
+          <li key={product._id}>
+            <div className="product-details" >
+              <span className="dropdown-button" onClick={() => toggleProductDropdown(product._id)}>
+                <FontAwesomeIcon icon={selectedProducts[product._id] ? faChevronDown : faChevronUp} />
+              </span>
+              <h5>{product.name}</h5>
+              <div className="product-actions">
+                <span className="action-button">
+                  <FontAwesomeIcon icon={faEdit} onClick={() => openProdEditModal(product)} />
+                </span>
+                <span className="action-button">
+                  <FontAwesomeIcon icon={faTrashAlt} onClick={() => openProdDeleteModal(product)} />
+                </span>
+              </div>
+            </div>
+            {selectedProducts[product._id] && (
+              <ul>
+                {product.services.map(service => (
+                  <li key={service._id}>{service.name}</li>
+                ))}
+                <li>
+                  <button className='add-button' onClick={() => console.log('Add service clicked')}>
+                    <FontAwesomeIcon icon={faPlus} /> Add Service
+                  </button>
+                </li>
+              </ul>
+            )}
+          </li>
+        ))}
+        <li>
+          <div style={{ display: "flex", color: "#0070ba", cursor: "pointer" }} onClick={handleAddProduct}>
+            <div><FontAwesomeIcon icon={faPlus} /></div>
+            <div style={{ marginLeft: "5px" }}>Add product</div>
+          </div>
+
+          <AddProductModal isOpen={displayAddProductModal} setIsOpen={setDisplayAddProductModal} onUpdate={onUpdateProductName} orgId={orgId}/>
+
+        </li>
+      </ul>
+
+      {selectedProduct && (
+        <EditProductModal
+          isOpen={editProdModalOpen}
+          onClose={closeEditModal}
+          product={selectedProduct}
+          onUpdate={onUpdateProductName}
+        />
+      )}
+      {productToDelete && (
+        <ProdDeleteModal
+          isOpen={prodDeleteModalOpen}
+          onClose={closeProdDeleteModal}
+          onDelete={onDeleteProduct}
+        />
+      )}
+    </div>
+  );
+};
+
+export default ProductDropdown;

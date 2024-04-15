@@ -21,13 +21,15 @@
     "babel-plugin-prismjs": "^2.1.0",
     "framer-motion": "^11.0.8",
     "install": "^0.13.0",
+    "mongoose": "^8.3.0",
     "next": "14.1.0",
     "next-auth": "^4.24.5",
     "npm": "^10.5.0",
     "prismjs": "^1.29.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
     "@types/node": "20.11.16",
