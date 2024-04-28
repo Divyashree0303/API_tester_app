@@ -15,7 +15,7 @@ import Head from 'next/head';
 
 
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children,Session }) {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);

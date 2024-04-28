@@ -1,10 +1,11 @@
 "use client"
 import { useState,useEffect } from 'react';
-import "./styles.css";
+import "./apiTester.css";
 import Body from "../_components/reqBodyTester/body"
 import ApiDeleteModal from "../apiTool/apiDeleteModal"
 
-export default function ApiTester({api,serviceId,setApi,onDeleteApi,apiToDelete,setApiToDelete,apiDeleteModalOpen,setApiDeleteModalOpen}) {
+
+export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDeleteModalOpen,setApi,setApiToDelete,setApiDeleteModalOpen}) {
 
 
   const [name,setName]=useState("");
@@ -22,6 +23,8 @@ export default function ApiTester({api,serviceId,setApi,onDeleteApi,apiToDelete,
   const [methodError,setMethodError] = useState("")
   const [nameError, setNameError] = useState('');
   const [urlError, setUrlError] = useState('');
+
+
 
   
   

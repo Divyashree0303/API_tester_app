@@ -1,8 +1,8 @@
 // ApiTool.jsx
 "use client"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navigator from "./navigator";
-import ApiTester from "../apiTester/page";
+import ApiTester from "../apiTester/apiTester.jsx";
 
 export default function ApiTool() {
   const [selectedFormApi, setSelectedFormApi] = useState(null);
@@ -12,7 +12,7 @@ export default function ApiTool() {
   const [apis, setApis] = useState({});// State to track if an API is added
 
 
-  const onDeleteApi = async (api) => {
+const onDeleteApi = async (api)=>{
     try {
       setApiDeleteModalOpen(false);
       // Perform deletion logic here, such as calling the backend API to delete the service
@@ -44,7 +44,7 @@ export default function ApiTool() {
     <div style={{ position: "relative", top: "65px", display: "flex" }}>
       <Navigator  setSelectedFormApi={setSelectedFormApi} setServiceIdForm={setServiceIdForm} apis={apis}
       setApis={setApis}  />
-      <ApiTester api={selectedFormApi} serviceId={serviceIdForm} setApi={setSelectedFormApi} onDeleteApi={onDeleteApi} apiToDelete={apiToDelete} setApiToDelete={setApiToDelete} apiDeleteModalOpen={apiDeleteModalOpen} setApiDeleteModalOpen={setApiDeleteModalOpen} />
+      <ApiTester api={selectedFormApi} serviceId={serviceIdForm}  onDeleteApi={onDeleteApi} apiToDelete={apiToDelete}  apiDeleteModalOpen={apiDeleteModalOpen} setApi={setSelectedFormApi} setApiToDelete={setApiToDelete} setApiDeleteModalOpen={setApiDeleteModalOpen} />
         
       
     </div>

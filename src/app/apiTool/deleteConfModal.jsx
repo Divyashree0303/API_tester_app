@@ -5,7 +5,7 @@ import "./deleteConfModal.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const DeleteConfirmationModal = ({ isOpen, onClose, onDelete }) => {
+export default function DeleteConfirmationModal({ isOpen, onClose, onDelete }){
   return (
     <div className={`modal ${isOpen ? 'open' : ''}`}>
       <div className="modal-content">
@@ -21,4 +21,4 @@ const DeleteConfirmationModal = ({ isOpen, onClose, onDelete }) => {
   );
 };
 
-export default DeleteConfirmationModal;
+

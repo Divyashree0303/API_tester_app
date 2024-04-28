@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
 import "./editProductModal.css"
 
-const EditServiceModal = ({ isOpen, onClose, service,onUpdate}) => {
+export default function EditServiceModal ({ isOpen, onClose, service,onUpdate}) {
   const [serviceName, setServiceName] = useState(service.name);
 
 
@@ -70,4 +70,3 @@ const EditServiceModal = ({ isOpen, onClose, service,onUpdate}) => {
   );
 };
 
-export default EditServiceModal;

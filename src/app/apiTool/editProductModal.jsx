@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
 import "./editProductModal.css"
 
-const EditProductModal = ({ isOpen, onClose, product,onUpdate}) => {
+export default function EditProductModal({ isOpen, onClose, product,onUpdate}){
   const [productName, setProductName] = useState(product.name);
 
 
@@ -70,4 +70,3 @@ const EditProductModal = ({ isOpen, onClose, product,onUpdate}) => {
   );
 };
 
-export default EditProductModal;

@@ -6,9 +6,9 @@ import "./serviceDropdown.css"
 import ServiceDeleteModal from "./serviceDeleteModal"
 import EditServiceModal from "./editServiceModal"
 import AddServiceModal from "./addService"
-import ApiTester from "../apiTester/page"
+import ApiTester from "../apiTester/apiTester"
 
-const ServiceDropdown = ({ services, setServices, productId, setSelectedFormApi,setServiceIdForm,apis,setApis}) => {
+export default function ServiceDropdown ({ services, setServices, productId, setSelectedFormApi,setServiceIdForm,apis,setApis}){
 
   const [selectedServices, setSelectedServices] = useState([]);
   const [editServiceModalOpen, setEditServiceModalOpen] = useState(false);
@@ -186,4 +186,3 @@ const ServiceDropdown = ({ services, setServices, productId, setSelectedFormApi,
   );
 };
 
-export default ServiceDropdown;

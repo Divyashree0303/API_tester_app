@@ -7,7 +7,7 @@ import EditProductModal from "./editProductModal"
 import AddProductModal from "./addProduct"
 import ServiceDropdown from './servicesDropdown';
 
-const ProductDropdown = ({ products, setProducts, orgId,setSelectedFormApi,setServiceIdForm,apis,setApis }) => {
+export default function ProductDropdown({ products, setProducts, orgId,setSelectedFormApi,setServiceIdForm,apis,setApis }){
 
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [editProdModalOpen, setEditProdModalOpen] = useState(false);
@@ -164,4 +164,4 @@ const toggleProductDropdown = (productId) => {
   );
 };
 
-export default ProductDropdown;
+

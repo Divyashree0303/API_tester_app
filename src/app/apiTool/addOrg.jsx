@@ -3,7 +3,7 @@ import "./addOrg.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
 
-const AddOrganizationModal = ({ isOpen, setIsOpen,onUpdate }) => {
+export default function AddOrganizationModal({ isOpen, setIsOpen,onUpdate }) {
   const [organizationName, setOrganizationName] = useState('');
   const [organizationType, setOrganizationType] = useState('');
   const [description, setDescription] = useState('');
@@ -125,4 +125,4 @@ const AddOrganizationModal = ({ isOpen, setIsOpen,onUpdate }) => {
   );
 };
 
-export default AddOrganizationModal;
+

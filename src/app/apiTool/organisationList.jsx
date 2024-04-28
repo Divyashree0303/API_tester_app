@@ -10,7 +10,7 @@ import DeleteConfirmationModal from './deleteConfModal';
 import AddOrganizationModal from './addOrg';
 import ProductDropdown from "./productDropdown"
 
- const OrganisationList = ({ setSelectedFormApi,setServiceIdForm,apis,setApis }) => {
+export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,apis,setApis }) {
   const [organizations, setOrganizations] = useState([]);
   const [selectedOrg, setSelectedOrg] = useState(null);
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -175,5 +175,5 @@ import ProductDropdown from "./productDropdown"
 };
 
 
-export default OrganisationList;
+
 

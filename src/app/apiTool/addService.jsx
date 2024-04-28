@@ -3,7 +3,7 @@ import "./addOrg.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
 
-const AddServiceModal = ({ isOpen, setIsOpen,onUpdate,productId}) => {
+export default function AddServiceModal({ isOpen, setIsOpen,onUpdate,productId}){
   const [serviceName, setServiceName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -93,4 +93,4 @@ const AddServiceModal = ({ isOpen, setIsOpen,onUpdate,productId}) => {
   );
 };
 
-export default AddServiceModal;
+

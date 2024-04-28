@@ -5,7 +5,7 @@ import "./deleteConfModal.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const ApiDeleteModal = ({ isOpen, onClose,apiToDelete, onDelete }) => {
+export default function ApiDeleteModal ({ isOpen, onClose,apiToDelete, onDelete }){
   return (
     <div className={`modal ${isOpen ? 'open' : ''}`}>
       <div className="modal-content">
@@ -21,4 +21,4 @@ const ApiDeleteModal = ({ isOpen, onClose,apiToDelete, onDelete }) => {
   );
 };
 
-export default ApiDeleteModal;
+

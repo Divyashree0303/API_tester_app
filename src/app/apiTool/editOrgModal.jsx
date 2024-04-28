@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
 
 
-const EditOrganizationModal = ({ isOpen, onClose, organization,onUpdate }) => {
+export default function EditOrganizationModal({ isOpen, onClose, organization,onUpdate }){
   const [organizationName, setOrganizationName] = useState(organization.name);
   const [description, setDescription] = useState(organization.description);
 
@@ -80,4 +80,3 @@ const EditOrganizationModal = ({ isOpen, onClose, organization,onUpdate }) => {
   );
 };
 
-export default EditOrganizationModal;

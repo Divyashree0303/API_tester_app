@@ -1,11 +1,10 @@
 // components/DeleteConfirmationModal.js
 
-import { useState } from 'react';
 import "./deleteConfModal.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const ServiceDeleteModal = ({ isOpen, onClose, onDelete }) => {
+export default function ServiceDeleteModal({ isOpen, onClose, onDelete }) {
   return (
     <div className={`modal ${isOpen ? 'open' : ''}`}>
       <div className="modal-content">
@@ -21,4 +20,4 @@ const ServiceDeleteModal = ({ isOpen, onClose, onDelete }) => {
   );
 };
 
-export default ServiceDeleteModal;
+
