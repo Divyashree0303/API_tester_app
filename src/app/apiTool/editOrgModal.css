@@ -53,7 +53,7 @@
     border-radius: 5px;
   }
 
-  button {
+  .edit-button {
     padding: 10px 20px;
     margin-right: 10px;
     cursor: pointer;
@@ -76,6 +76,11 @@
   
   .save-button:hover {
     background-color: #0056b3;
+  }
+
+  .org-edit-buttons{
+    display: flex;
+    justify-content: flex-end;
   }
   
   @media (max-width: 768px) {

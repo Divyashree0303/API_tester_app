@@ -863,7 +863,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -923,7 +923,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -981,7 +981,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1038,7 +1038,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1077,7 +1077,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1157,7 +1157,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1216,7 +1216,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1254,7 +1254,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1299,7 +1299,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1352,7 +1352,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1388,7 +1388,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1447,7 +1447,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1495,7 +1495,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1541,7 +1541,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>
@@ -1589,7 +1589,7 @@ export default function ApiDocsPage() {
 
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>    
@@ -1634,7 +1634,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>   
@@ -1672,7 +1672,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>  
@@ -1725,7 +1725,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>  
@@ -1760,7 +1760,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>  
@@ -1805,7 +1805,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>  
@@ -1846,7 +1846,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div>   
@@ -1880,7 +1880,7 @@ export default function ApiDocsPage() {
           </div>
 
           <div className="note">
-            <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+            <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
           </div>
 
         </div> 
@@ -1924,7 +1924,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -1967,7 +1967,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2007,7 +2007,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2063,7 +2063,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2105,7 +2105,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2140,7 +2140,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2175,7 +2175,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2208,7 +2208,7 @@ export default function ApiDocsPage() {
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2242,7 +2242,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2280,7 +2280,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2351,7 +2351,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2410,7 +2410,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2469,7 +2469,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2509,7 +2509,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2549,7 +2549,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2589,7 +2589,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>
@@ -2639,7 +2639,7 @@ Richard,Scott,469246351234567890,CURRENT,GB,18155.0,18155.0`} />
         </div>
 
         <div className="note">
-          <p>To test the API,<Link target="_blank" href="/apiTester">click here</Link> to access our testing interface.</p>
+          <p>To test the API,<Link target="_blank" href="/apiTool">click here</Link> to access our testing interface.</p>
         </div>
 
         </div>

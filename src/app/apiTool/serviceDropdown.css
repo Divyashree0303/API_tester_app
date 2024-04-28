@@ -1,0 +1,30 @@
+.api {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+  .apis{
+    padding-left: 15px;
+  }
+  
+  .apis li {
+    padding: 1px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Highlight on hover */
+  .apis li:hover {
+    background-color: rgb(245, 247, 250);
+
+  }
+  
+  /* Highlight when clicked */
+  .apis li.selected {
+    background-color:  rgb(245, 247, 250);
+    background-color: rgb(245, 247, 250);
+    font-weight: bold;
+    border-left: 4px solid #121661;
+    /* Add any additional styling for the selected API here */
+  }

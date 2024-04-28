@@ -5,31 +5,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
 import "./editProductModal.css"
 
-const EditProductModal = ({ isOpen, onClose, product,onUpdate}) => {
-  const [productName, setProductName] = useState(product.name);
+const EditServiceModal = ({ isOpen, onClose, service,onUpdate}) => {
+  const [serviceName, setServiceName] = useState(service.name);
 
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/products/`, {
+      const response = await fetch(`/api/services/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          productId:product._id,
-          newProductName: productName,
+          serviceId:service._id,
+          newServiceName: serviceName,
         })
       });
 
       if (!response.ok) {
-        throw new Error('Failed to update product');
+        throw new Error('Failed to update service');
       }
 
-      const updatedProduct = await response.json();
-      onUpdate(updatedProduct.product); 
+      const updatedService = await response.json();
+      onUpdate(updatedService.service); 
 
       console.log("before");
 
@@ -39,7 +39,7 @@ const EditProductModal = ({ isOpen, onClose, product,onUpdate}) => {
       console.log("after");
 
     } catch (error) {
-      console.error('Error updating product:', error);
+      console.error('Error updating service:', error);
       // Handle error here, such as displaying an error message to the user
     }
   };
@@ -48,15 +48,15 @@ const EditProductModal = ({ isOpen, onClose, product,onUpdate}) => {
     <div className={`modal ${isOpen ? 'open' : ''}`}>
       <div className="modal-content">
         <span className="close" onClick={onClose}><FontAwesomeIcon icon={faXmark} /></span>
-        <h2>Edit Product</h2>
+        <h2>Edit Service</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="productName">Product Name:</label>
+            <label htmlFor="productName">Service Name:</label>
             <input 
               type="text" 
-              id="productName" 
-              value={productName} 
-              onChange={(e) => setProductName(e.target.value)}
+              id="serviceName" 
+              value={serviceName} 
+              onChange={(e) => setServiceName(e.target.value)}
               required 
             />
           </div>
@@ -70,4 +70,4 @@ const EditProductModal = ({ isOpen, onClose, product,onUpdate}) => {
   );
 };
 
-export default EditProductModal;
+export default EditServiceModal;

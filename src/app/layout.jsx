@@ -104,7 +104,7 @@ export default function RootLayout({ children }) {
                         <div className=" rightList tools">
                             <button className="toolsButton">Tools</button>
                             <div className="toolsDropdownContent">
-                                <Link href="/apiTester" target="_blank">API Testing</Link>
+                                <Link href="/apiTool" target="_blank">API Testing</Link>
                             </div>
                         </div>
                         <div className="rightList productsButton" ><Link href="/">Support</Link></div>
@@ -187,7 +187,7 @@ export default function RootLayout({ children }) {
 
                             </div>
                             <ul>
-                                <li><Link target="_blank" href="/apiTester" onClick={() => {
+                                <li><Link target="_blank" href="/apiTool" onClick={() => {
                                     closeMenu();
                                 }}>API Testing</Link></li>
 

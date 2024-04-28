@@ -1,21 +1,20 @@
-.container {
-  max-width: 600px;
-  margin: auto;
+.container-api {
+  width: 600px;
+  margin: 0px auto;
   padding: 20px;
   overflow-wrap: break-word; /* Overflow content will wrap onto the next line */
   position: relative;
-  top:65px;
 /* text-align: justify; */
 }
 
-.basicAuthContainer {
+.basicAuthContainer-api {
 display: flex;
 flex-direction: row;
 margin-top: 10px;
 }
 
 
-.basicAuthContainer input {
+.basicAuthContainer-api input {
 padding: 8px;
 width: 100%;
 box-sizing: border-box;
@@ -27,28 +26,28 @@ form {
   flex-direction: column;
 }
 
-.row {
+.row-api{
   display: flex;
   gap: 1px;
   margin-bottom: 12px;
   
 }
 
-.overflow{
+.overflow-api{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   
 }
 
-.label {
+.label-api {
   margin-bottom: 8px;
   
 }
 
-.input,
-.textarea,
-.select {
+.input-api,
+.textarea-api,
+.select-api {
   width: 100%;
   padding: 8px;
   -webkit-box-sizing: border-box;
@@ -56,48 +55,51 @@ form {
   box-sizing: border-box;
 }
 
-.bodyContainer {
+.bodyContainer-api {
   margin-bottom: 12px;
 }
 
-.headerContainer {
+.headerContainer-api {
   margin-top: 12px;
 }
 
-.headerRow {
+.headerRow-api {
   display: flex;
   gap: 8px;
   margin-bottom: 20px;
 }
 
-.removeButton {
+.removeButton-api {
   background-color: #f44336;
   color: white;
   border: none;
   border-radius: 4px;
  /* padding: 6px 12px;*/
   cursor: pointer;
+  width: 100%;
 }
 
-.addButton {
+.addButton-api {
   background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 12px;
   cursor: pointer;
   border-radius: 4px;
+  width: 100%;
 }
 
-.sendButton {
+.sendButton-api {
   background-color: #2196f3;
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
   border-radius: 4px;
+  width: 100%;
 }
 
-.SignOutButton{
+.SignOutButton-api{
   background-color: #4caf50;
   color: white;
   border: none;
@@ -107,11 +109,11 @@ form {
   border-radius: 4px;
 }
 
-.responseContainer {
+.responseContainer-api {
   margin-top: 20px;
 }
 
-.responseData {
+.responseData-api {
   margin-top: 8px;
   border: 1px solid #ddd;
   padding: 12px;
@@ -119,12 +121,12 @@ form {
   font-family: sans-serif;
 }
 
-.wordWrap {
+.wordWrap-api {
   white-space: pre-line;
   font-size: 16px;
 }
 
-.signin-container {
+.signin-container-api {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,12 +139,12 @@ form {
   margin-top: 60px;
 }
 
-.not-signed-in-text {
+.not-signed-in-text-api {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.signin-button {
+.signin-button-api {
   background-color: #4caf50;
   color: white;
   padding: 10px 20px;
@@ -151,4 +153,13 @@ form {
   border: none;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+
+.end-button-api{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.save-button{
+  margin-right: 0;
 }

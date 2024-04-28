@@ -10,7 +10,7 @@ import DeleteConfirmationModal from './deleteConfModal';
 import AddOrganizationModal from './addOrg';
 import ProductDropdown from "./productDropdown"
 
- const OrganisationList = () => {
+ const OrganisationList = ({ setSelectedFormApi,setServiceIdForm,apis,setApis }) => {
   const [organizations, setOrganizations] = useState([]);
   const [selectedOrg, setSelectedOrg] = useState(null);
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -150,7 +150,7 @@ import ProductDropdown from "./productDropdown"
               </div>
             </div>
             {selectedOrg === org._id && (
-              <ProductDropdown orgId={org._id} products={products} setProducts={setProducts} />
+              <ProductDropdown orgId={org._id} products={products} setProducts={setProducts} setSelectedFormApi={setSelectedFormApi} setServiceIdForm={setServiceIdForm} apis={apis} setApis={setApis} />
             )}
           </li>
         ))}

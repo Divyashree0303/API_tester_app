@@ -1,32 +1,58 @@
-import { useState } from 'react';
+import { useState,useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faPlus, faChevronDown, faChevronUp,faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import "./productDropdown.css"
 import ProdDeleteModal from "./prodDeleteModal"
 import EditProductModal from "./editProductModal"
 import AddProductModal from "./addProduct"
+import ServiceDropdown from './servicesDropdown';
 
-const ProductDropdown = ({ products, setProducts, orgId }) => {
+const ProductDropdown = ({ products, setProducts, orgId,setSelectedFormApi,setServiceIdForm,apis,setApis }) => {
 
-  const [selectedProducts, setSelectedProducts] = useState({});
+  const [selectedProducts, setSelectedProducts] = useState([]);
   const [editProdModalOpen, setEditProdModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [prodDeleteModalOpen, setProdDeleteModalOpen] = useState(false);
   const [productToDelete, setProductToDelete] = useState(null);
   const [displayAddProductModal,setDisplayAddProductModal]=useState(false)
+  const [services, setServices] = useState({});
 
 
   const handleAddProduct= () => {
     setDisplayAddProductModal(true);
 
 }
-
-  const toggleProductDropdown = (productId) => {
-    setSelectedProducts(prevState => ({
-      ...prevState,
-      [productId]: !prevState[productId]
-    }));
+useEffect(() => {
+  const fetchServices = async () => {
+    for (const productId of selectedProducts) {
+      try {
+        const response = await fetch(`/api/services?productId=${productId}`);
+        const servicesData = await response.json();
+        setServices((prevServices) => ({
+          ...prevServices,
+          [productId]: servicesData,
+        }));
+      } catch (error) {
+        console.error('Error fetching services:', error);
+      }
+    }
   };
+
+  fetchServices();
+}, [selectedProducts,services]);
+
+const toggleProductDropdown = (productId) => {
+  setSelectedProducts((prevSelected) =>
+    prevSelected.includes(productId)
+      ? prevSelected.filter((id) => id !== productId)
+      : [...prevSelected, productId]
+  );
+};
+  const isDropdownOpen = (productId) => {
+    return selectedProducts.includes(productId);
+  };
+
+
 
   const openProdEditModal = (product) => {
     setSelectedProduct(product);
@@ -90,8 +116,8 @@ const ProductDropdown = ({ products, setProducts, orgId }) => {
         {products.map(product => (
           <li key={product._id}>
             <div className="product-details" >
-              <span className="dropdown-button" onClick={() => toggleProductDropdown(product._id)}>
-                <FontAwesomeIcon icon={selectedProducts[product._id] ? faChevronDown : faChevronUp} />
+            <span className="dropdown-button" onClick={() => toggleProductDropdown(product._id)}>
+                <FontAwesomeIcon icon={isDropdownOpen(product._id) ? faChevronDown : faChevronUp} />
               </span>
               <h5>{product.name}</h5>
               <div className="product-actions">
@@ -103,17 +129,8 @@ const ProductDropdown = ({ products, setProducts, orgId }) => {
                 </span>
               </div>
             </div>
-            {selectedProducts[product._id] && (
-              <ul>
-                {product.services.map(service => (
-                  <li key={service._id}>{service.name}</li>
-                ))}
-                <li>
-                  <button className='add-button' onClick={() => console.log('Add service clicked')}>
-                    <FontAwesomeIcon icon={faPlus} /> Add Service
-                  </button>
-                </li>
-              </ul>
+            {isDropdownOpen(product._id) && (
+              <ServiceDropdown productId={product._id} services={services[product._id] || []} setServices={setServices} setSelectedFormApi={setSelectedFormApi} setServiceIdForm={setServiceIdForm} apis={apis} setApis={setApis} />
             )}
           </li>
         ))}

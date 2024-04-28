@@ -71,4 +71,9 @@
   .save-button:hover {
     background-color: #005689;
   }
+
+  .edit-prod-buttons{
+    display: flex;
+    justify-content: flex-end;
+  }
   

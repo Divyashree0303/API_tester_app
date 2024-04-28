@@ -263,7 +263,7 @@ function Sidebar({ toggleDropdown, dropdowns, handleClick, clicked, toggleSideba
                         </ul>
                     </li>
 
-                    <li><Link href="/apiTester" target="_blank" onClick={() => handleClick('apiTester')} className={clicked['apiTester'] ? `clicked` : ``}>API testing</Link></li>
+                    <li><Link href="/apiTool" target="_blank" onClick={() => handleClick('apiTester')} className={clicked['apiTester'] ? `clicked` : ``}>API testing</Link></li>
 
                 </ul>
                 <FontAwesomeIcon icon={faXmark} className="toggleButton toggleButtonXmark" onClick={() => toggleSidebarLeft()} />

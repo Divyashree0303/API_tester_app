@@ -115,8 +115,8 @@ const AddOrganizationModal = ({ isOpen, setIsOpen,onUpdate }) => {
             />
           </div>
           <div className="button-div">
-          <button type="button" className='cancel-button' onClick={onClose}>Cancel</button>
-          <button type="submit" className='save-button' onClick={e => handleSubmit(e,onClose)}>Save</button>
+          <button type="button" className='cancel-button org-button' onClick={onClose}>Cancel</button>
+          <button type="submit" className='save-button org-button' onClick={e => handleSubmit(e,onClose)}>Save</button>
           
           </div>
         </form>

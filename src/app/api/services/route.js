@@ -32,7 +32,7 @@ export const GET = async (req) => {
 
    
 
-    const services = await Service.find({ product: orgId });
+    const services = await Service.find({ product: productId });
     return new NextResponse(JSON.stringify(services), { status: 200 });
   } catch (error) {
     return new NextResponse(JSON.stringify({ message: "Error fetching products" ,error:error }), { status: 500 });
@@ -104,7 +104,7 @@ export const PATCH = async (req) => {
         }
     
         return new NextResponse(JSON.stringify({
-          product: updatedService,
+          service: updatedService,
           message: "service updated successfully"
         }),
           {
@@ -123,7 +123,7 @@ export const DELETE = async (req) => {
         const { searchParams } = new URL(req.url);
         const serviceId = searchParams.get('serviceId');
     
-        if (!serviceIdId) {
+        if (!serviceId) {
           return new NextResponse(JSON.stringify({ message: "service Id is required" }), { status: 400 });
         }
     
@@ -163,7 +163,6 @@ export const DELETE = async (req) => {
     
         return new NextResponse(JSON.stringify({
           service: deletedService,
-          product,
           message: "service deleted successfully"
         }),
           {

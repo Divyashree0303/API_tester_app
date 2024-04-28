@@ -70,8 +70,10 @@ const EditOrganizationModal = ({ isOpen, onClose, organization,onUpdate }) => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <button type="button" className='cancel-button' onClick={onClose}>Cancel</button>
-          <button type="submit" className="save-button">Save</button>
+          <div className='org-edit-buttons'>
+          <button type="button" className='cancel-button edit-button' onClick={onClose}>Cancel</button>
+          <button type="submit" className="save-button  edit-button">Save</button>
+          </div>
         </form>
       </div>
     </div>
