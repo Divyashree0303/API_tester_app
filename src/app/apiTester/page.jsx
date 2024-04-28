@@ -4,7 +4,7 @@ import "./styles.css";
 import Body from "../_components/reqBodyTester/body"
 import ApiDeleteModal from "../apiTool/apiDeleteModal"
 
-export default function Home({api,serviceId,setApi,onDeleteApi,apiToDelete,setApiToDelete,apiDeleteModalOpen,setApiDeleteModalOpen}) {
+export default function ApiTester({api,serviceId,setApi,onDeleteApi,apiToDelete,setApiToDelete,apiDeleteModalOpen,setApiDeleteModalOpen}) {
 
 
   const [name,setName]=useState("");
