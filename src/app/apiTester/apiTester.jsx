@@ -300,7 +300,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
         <span className='error-message'>{nameError}</span>
         </label>
       </div>)
-    ):<h4>Test Api</h4>}
+    ):<h4>Test API</h4>}
       
       <form className='form-api'>
         <div className='row-api'>
