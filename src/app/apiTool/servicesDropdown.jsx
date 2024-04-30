@@ -19,7 +19,7 @@ export default function ServiceDropdown ({ services, setServices, productId, set
   const [selectedApi, setSelectedApi] = useState(null);
   // const [apis, setApis] = useState({});
 
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
 
   const handleAddService = () => {

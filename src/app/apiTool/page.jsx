@@ -11,7 +11,7 @@ export default function ApiTool() {
   const [apiDeleteModalOpen,setApiDeleteModalOpen]=useState(false);
   const [apis, setApis] = useState({});// State to track if an API is added
 
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
 
 const onDeleteApi = async (api)=>{

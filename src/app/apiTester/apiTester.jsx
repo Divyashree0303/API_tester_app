@@ -24,7 +24,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
   const [nameError, setNameError] = useState('');
   const [urlError, setUrlError] = useState('');
 
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
 
 

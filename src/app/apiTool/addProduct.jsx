@@ -7,7 +7,7 @@ export default function AddProductModal ({ isOpen, setIsOpen,onUpdate,orgId}) {
   const [productName, setProductName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
   const handleSubmit = async (e,onClose) => {
     e.preventDefault();

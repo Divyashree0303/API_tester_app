@@ -10,7 +10,7 @@ export default function EditOrganizationModal({ isOpen, onClose, organization,on
   const [organizationName, setOrganizationName] = useState(organization.name);
   const [description, setDescription] = useState(organization.description);
 
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
 
   const handleSubmit = async (e) => {

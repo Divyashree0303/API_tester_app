@@ -7,7 +7,7 @@ import "./editProductModal.css"
 
 export default function EditServiceModal ({ isOpen, onClose, service,onUpdate}) {
   const [serviceName, setServiceName] = useState(service.name);
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
 
 

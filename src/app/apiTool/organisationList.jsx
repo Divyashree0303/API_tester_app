@@ -20,7 +20,7 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
   const [displayAddOrgModal,setDisplayAddOrgModal] = useState(false)
   const [products, setProducts] = useState([]);
 
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
   const handleAddOrg = () => {
       setDisplayAddOrgModal(true);

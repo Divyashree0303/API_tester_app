@@ -17,7 +17,7 @@ export default function ProductDropdown({ products, setProducts, orgId,setSelect
   const [displayAddProductModal,setDisplayAddProductModal]=useState(false)
   const [services, setServices] = useState({});
 
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
 
   const handleAddProduct= () => {

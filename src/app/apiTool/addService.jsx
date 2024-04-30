@@ -6,7 +6,7 @@ import { faXmark} from '@fortawesome/free-solid-svg-icons'
 export default function AddServiceModal({ isOpen, setIsOpen,onUpdate,productId}){
   const [serviceName, setServiceName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+  const URL = process.env.URL;
 
   const handleSubmit = async (e,onClose) => {
     e.preventDefault();
