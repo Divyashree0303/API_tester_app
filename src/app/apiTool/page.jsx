@@ -11,12 +11,14 @@ export default function ApiTool() {
   const [apiDeleteModalOpen,setApiDeleteModalOpen]=useState(false);
   const [apis, setApis] = useState({});// State to track if an API is added
 
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+
 
 const onDeleteApi = async (api)=>{
     try {
       setApiDeleteModalOpen(false);
       // Perform deletion logic here, such as calling the backend API to delete the service
-      const response = await fetch(`/api/apis?apiId=${api._id}`, {
+      const response = await fetch(URL+`/api/apis?apiId=${api._id}`, {
         method: 'DELETE'
       });
       if (response.ok) {

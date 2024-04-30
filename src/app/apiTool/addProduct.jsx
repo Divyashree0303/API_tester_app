@@ -7,6 +7,8 @@ export default function AddProductModal ({ isOpen, setIsOpen,onUpdate,orgId}) {
   const [productName, setProductName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+
   const handleSubmit = async (e,onClose) => {
     e.preventDefault();
   
@@ -17,7 +19,7 @@ export default function AddProductModal ({ isOpen, setIsOpen,onUpdate,orgId}) {
   
     try {
 
-      const response = await fetch('/api/products', {
+      const response = await fetch(URL+'/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

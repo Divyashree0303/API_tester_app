@@ -10,11 +10,13 @@ export default function EditOrganizationModal({ isOpen, onClose, organization,on
   const [organizationName, setOrganizationName] = useState(organization.name);
   const [description, setDescription] = useState(organization.description);
 
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/organisations/`, {
+      const response = await fetch(URL+`/api/organisations/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'

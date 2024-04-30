@@ -17,6 +17,8 @@ export default function ProductDropdown({ products, setProducts, orgId,setSelect
   const [displayAddProductModal,setDisplayAddProductModal]=useState(false)
   const [services, setServices] = useState({});
 
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+
 
   const handleAddProduct= () => {
     setDisplayAddProductModal(true);
@@ -26,7 +28,7 @@ useEffect(() => {
   const fetchServices = async () => {
     for (const productId of selectedProducts) {
       try {
-        const response = await fetch(`/api/services?productId=${productId}`);
+        const response = await fetch(URL+`/api/services?productId=${productId}`);
         const servicesData = await response.json();
         setServices((prevServices) => ({
           ...prevServices,
@@ -93,7 +95,7 @@ const toggleProductDropdown = (productId) => {
     try {
       setProdDeleteModalOpen(false);
       // Perform deletion logic here, such as calling the backend API to delete the organization
-      const response = await fetch(`/api/products?productId=${productToDelete._id}`, {
+      const response = await fetch(URL+`/api/products?productId=${productToDelete._id}`, {
         method: 'DELETE'
       });
       if (response.ok) {

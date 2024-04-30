@@ -7,13 +7,14 @@ import "./editProductModal.css"
 
 export default function EditServiceModal ({ isOpen, onClose, service,onUpdate}) {
   const [serviceName, setServiceName] = useState(service.name);
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
 
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/services/`, {
+      const response = await fetch(URL+`/api/services/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'

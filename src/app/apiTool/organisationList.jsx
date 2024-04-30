@@ -20,6 +20,8 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
   const [displayAddOrgModal,setDisplayAddOrgModal] = useState(false)
   const [products, setProducts] = useState([]);
 
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+
   const handleAddOrg = () => {
       setDisplayAddOrgModal(true);
 
@@ -31,7 +33,7 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
 
   const fetchOrganizations = async () => {
     try {
-      const response = await fetch('/api/organisations');
+      const response = await fetch(URL + '/api/organisations');
       const data = await response.json();
       setOrganizations(data);
     } catch (error) {
@@ -42,7 +44,7 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
   const fetchProducts = async (orgId) => {
     try {
       console.log(orgId);
-      const response = await fetch(`/api/products?orgId=${orgId}`);
+      const response = await fetch(URL + `/api/products?orgId=${orgId}`);
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -86,7 +88,7 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
     try {
       setDeleteModalOpen(false);
       // Perform deletion logic here, such as calling the backend API to delete the organization
-      const response = await fetch(`/api/organisations?orgId=${organizationToDelete._id}`, {
+      const response = await fetch( URL + `/api/organisations?orgId=${organizationToDelete._id}`, {
         method: 'DELETE'
       });
       if (response.ok) {

@@ -9,6 +9,8 @@ export default function AddOrganizationModal({ isOpen, setIsOpen,onUpdate }) {
   const [description, setDescription] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+
   const handleSubmit = async (e,onClose) => {
     e.preventDefault();
   
@@ -24,7 +26,7 @@ export default function AddOrganizationModal({ isOpen, setIsOpen,onUpdate }) {
 
       
       
-      const response = await fetch('/api/organisations', {
+      const response = await fetch(URL+'/api/organisations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

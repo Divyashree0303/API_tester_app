@@ -24,6 +24,8 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
   const [nameError, setNameError] = useState('');
   const [urlError, setUrlError] = useState('');
 
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
+
 
 
   
@@ -214,7 +216,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
 
       console.log(requestOptions);
   
-      const res = await fetch('/api/apis', requestOptions);
+      const res = await fetch(URL+'/api/apis', requestOptions);
       const data = await res.json();
       console.log(data);
       setApi(data.api);
@@ -264,7 +266,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
         })
       };
   
-      const res = await fetch(`/api/apis/`, requestOptions);
+      const res = await fetch(URL+`/api/apis/`, requestOptions);
       const data = await res.json();
       console.log(data);
   

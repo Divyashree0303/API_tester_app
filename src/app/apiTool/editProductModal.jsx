@@ -7,13 +7,14 @@ import "./editProductModal.css"
 
 export default function EditProductModal({ isOpen, onClose, product,onUpdate}){
   const [productName, setProductName] = useState(product.name);
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
 
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/products/`, {
+      const response = await fetch(URL+`/api/products/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'

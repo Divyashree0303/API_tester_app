@@ -6,6 +6,7 @@ import { faXmark} from '@fortawesome/free-solid-svg-icons'
 export default function AddServiceModal({ isOpen, setIsOpen,onUpdate,productId}){
   const [serviceName, setServiceName] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const URL = process.env.NODE_ENV ==="production"? process.env.URL:"";
 
   const handleSubmit = async (e,onClose) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ export default function AddServiceModal({ isOpen, setIsOpen,onUpdate,productId})
   
     try {
 
-      const response = await fetch('/api/services', {
+      const response = await fetch(URL+'/api/services', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
