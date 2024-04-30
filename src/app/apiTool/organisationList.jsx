@@ -126,7 +126,7 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
 
       <div style={{ display: "flex", color: "#0070ba", cursor: "pointer" }} onClick={handleAddOrg}>
         <div><FontAwesomeIcon icon={faCirclePlus} /></div>
-        <div style={{ marginLeft: "5px" }}>Add organisation</div>
+        <div style={{ marginLeft: "5px" }}>Add Organisation</div>
       </div>
 
       <AddOrganizationModal isOpen={displayAddOrgModal} setIsOpen={setDisplayAddOrgModal} onUpdate={onUpdateOrganization} />
