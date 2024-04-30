@@ -36,7 +36,7 @@ const onDeleteApi = async (api)=>{
         console.error('Failed to delete api');
       }
     } catch (error) {
-      console.error('Error deleting api:', error);
+      console.error('Error in deleting api:', error);
     }
   };
 
