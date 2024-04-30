@@ -26,7 +26,7 @@ export default function AddOrganizationModal({ isOpen, setIsOpen,onUpdate }) {
 
       
       
-      const response = await fetch(URL+'/api/organisations', {
+      const response = await fetch(`${URL}/api/organisations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

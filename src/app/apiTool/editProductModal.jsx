@@ -14,7 +14,7 @@ export default function EditProductModal({ isOpen, onClose, product,onUpdate}){
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(URL+`/api/products/`, {
+      const response = await fetch(`${URL}/api/products/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'

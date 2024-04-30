@@ -18,7 +18,7 @@ export default function AddServiceModal({ isOpen, setIsOpen,onUpdate,productId})
   
     try {
 
-      const response = await fetch(URL+'/api/services', {
+      const response = await fetch(`${URL}/api/services`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

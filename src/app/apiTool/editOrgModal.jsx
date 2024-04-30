@@ -16,7 +16,7 @@ export default function EditOrganizationModal({ isOpen, onClose, organization,on
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(URL+`/api/organisations/`, {
+      const response = await fetch(`${URL}/api/organisations/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'

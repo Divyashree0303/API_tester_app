@@ -79,7 +79,7 @@ export default function ServiceDropdown ({ services, setServices, productId, set
     try {
       setServiceDeleteModalOpen(false);
       // Perform deletion logic here, such as calling the backend API to delete the service
-      const response = await fetch(URL+`/api/services?serviceId=${serviceToDelete._id}`, {
+      const response = await fetch(`${URL}/api/services?serviceId=${serviceToDelete._id}`, {
         method: 'DELETE'
       });
       if (response.ok) {
@@ -98,7 +98,7 @@ export default function ServiceDropdown ({ services, setServices, productId, set
     const fetchApis= async () => {
       for (const serviceId of selectedServices) {
         try {
-          const response = await fetch(URL+`/api/apis?serviceId=${serviceId}`);
+          const response = await fetch(`${URL}/api/apis?serviceId=${serviceId}`);
           const apisData = await response.json();
           setApis((prevApis) => ({
             ...prevApis,

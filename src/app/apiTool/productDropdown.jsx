@@ -28,7 +28,7 @@ useEffect(() => {
   const fetchServices = async () => {
     for (const productId of selectedProducts) {
       try {
-        const response = await fetch(URL+`/api/services?productId=${productId}`);
+        const response = await fetch(`${URL}/api/services?productId=${productId}`);
         const servicesData = await response.json();
         setServices((prevServices) => ({
           ...prevServices,
@@ -95,7 +95,7 @@ const toggleProductDropdown = (productId) => {
     try {
       setProdDeleteModalOpen(false);
       // Perform deletion logic here, such as calling the backend API to delete the organization
-      const response = await fetch(URL+`/api/products?productId=${productToDelete._id}`, {
+      const response = await fetch(`${URL}/api/products?productId=${productToDelete._id}`, {
         method: 'DELETE'
       });
       if (response.ok) {

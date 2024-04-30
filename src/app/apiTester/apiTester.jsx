@@ -266,7 +266,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
         })
       };
   
-      const res = await fetch(URL+`/api/apis/`, requestOptions);
+      const res = await fetch(`${URL}/api/apis/`, requestOptions);
       const data = await res.json();
       console.log(data);
   

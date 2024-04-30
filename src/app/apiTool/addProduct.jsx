@@ -19,7 +19,7 @@ export default function AddProductModal ({ isOpen, setIsOpen,onUpdate,orgId}) {
   
     try {
 
-      const response = await fetch(URL+'/api/products', {
+      const response = await fetch(`${URL}/api/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

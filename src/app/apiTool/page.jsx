@@ -18,7 +18,7 @@ const onDeleteApi = async (api)=>{
     try {
       setApiDeleteModalOpen(false);
       // Perform deletion logic here, such as calling the backend API to delete the service
-      const response = await fetch(URL+`/api/apis?apiId=${api._id}`, {
+      const response = await fetch(`${URL}/api/apis?apiId=${api._id}`, {
         method: 'DELETE'
       });
       if (response.ok) {

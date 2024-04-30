@@ -14,7 +14,7 @@ export default function EditServiceModal ({ isOpen, onClose, service,onUpdate}) 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(URL+`/api/services/`, {
+      const response = await fetch(`${URL}/api/services/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
