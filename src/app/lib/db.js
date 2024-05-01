@@ -4,13 +4,6 @@ const MONGODB_URI=process.env.NEXT_PUBLIC_MONGODB_URI;
 
 const connect = async() => {
     const connectionState = mongoose.connection.readyState;
-    // if (connectionState === 1) {
-    //     console.log("already connected");
-    // }
-
-    // if (connectionState === 2) {
-    //     console.log("connecting...");
-    // }
 
     try{
         await mongoose.connect(MONGODB_URI,{
