@@ -9,7 +9,7 @@ export default function AddOrganizationModal({ isOpen, setIsOpen,onUpdate }) {
   const [description, setDescription] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const URL = process.env.URL;
+  const URL = process.env.NEXT_PUBLIC_URL;
 
   const handleSubmit = async (e,onClose) => {
     e.preventDefault();

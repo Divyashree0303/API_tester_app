@@ -7,7 +7,7 @@ import "./editProductModal.css"
 
 export default function EditProductModal({ isOpen, onClose, product,onUpdate}){
   const [productName, setProductName] = useState(product.name);
-  const URL = process.env.URL;
+  const URL = process.env.NEXT_PUBLIC_URL;
 
 
 

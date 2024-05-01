@@ -20,7 +20,7 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
   const [displayAddOrgModal,setDisplayAddOrgModal] = useState(false)
   const [products, setProducts] = useState([]);
 
-  const URL = process.env.URL;
+  const URL = process.env.NEXT_PUBLIC_URL;
 
   const handleAddOrg = () => {
       setDisplayAddOrgModal(true);
@@ -28,6 +28,7 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
   }
 
   useEffect(() => {
+    
     fetchOrganizations();
   }, [organizations,products]);
 
