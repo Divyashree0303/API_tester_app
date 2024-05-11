@@ -30,7 +30,6 @@ export default function ApiTester({collapsed,api,serviceId,onDeleteApi,apiToDele
   
   // Initialize state based on the api object received
   useEffect(() => {
-    console.log(api);
       setNameError("");
       setMethodError("");
       setUrlError("");
@@ -54,7 +53,6 @@ export default function ApiTester({collapsed,api,serviceId,onDeleteApi,apiToDele
         data: api!==null?(api.response?api.response.data:"") :"",
       });
 
-      console.log(api.requestBody.formDataParams)
     
     
   }, [api,serviceId]);
