@@ -1170,7 +1170,7 @@ export default function ApiDocsPage() {
 
 
           <h4>Endpoint</h4>
-          <Endpoint details="/bankaccounts/bank-admin/create" method="GET" />
+          <Endpoint details="/bankaccounts/bank_admin/create" method="GET" />
 
           <div className="sample">
 
@@ -1732,7 +1732,7 @@ export default function ApiDocsPage() {
 
         {/*approve card */}
         <div id="approve-card" className="section">
-          <h3>19. Get all card applications</h3>
+          <h3>19. Approve card</h3>
           <p>This endpoint approves a card request in the system. Only bank-admin users can call this endpoint.</p>
           <p> Refer to the <Link href='/authentication'>Authentication Guide</Link> for details on obtaining and using API keys. You can login as BANK_ADMIN to access this API. When you make calls to the tokenization API, include the API key as bearer access token in the authorization header.</p>
 

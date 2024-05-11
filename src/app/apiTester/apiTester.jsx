@@ -5,7 +5,7 @@ import Body from "../_components/reqBodyTester/body"
 import ApiDeleteModal from "../apiTool/apiDeleteModal"
 
 
-export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDeleteModalOpen,setApi,setApiToDelete,setApiDeleteModalOpen}) {
+export default function ApiTester({collapsed,api,serviceId,onDeleteApi,apiToDelete,apiDeleteModalOpen,setApi,setApiToDelete,setApiDeleteModalOpen}) {
 
 
   const [name,setName]=useState("");
@@ -24,15 +24,13 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
   const [nameError, setNameError] = useState('');
   const [urlError, setUrlError] = useState('');
 
-  const URL = process.env.URL;
-
-
+  const CHROME_URL = process.env.NEXT_PUBLIC_URL;
 
   
   
   // Initialize state based on the api object received
   useEffect(() => {
-    console.log(serviceId);
+    console.log(api);
       setNameError("");
       setMethodError("");
       setUrlError("");
@@ -55,13 +53,17 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
         status: api!==null?(api.response?api.response.status:""):"",
         data: api!==null?(api.response?api.response.data:"") :"",
       });
+
+      console.log(api.requestBody.formDataParams)
     
     
   }, [api,serviceId]);
 
   const handleSendRequest = async () => {
     try {
+      console.log(url);
       let urlWithParams = new URL(url);
+      
 
       params.forEach(([key, value]) => {
         if (!urlWithParams.searchParams.has(key)) {
@@ -109,7 +111,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
       }
 
 
-
+      console.log(urlWithParams,requestOptions);
       const res = await fetch(urlWithParams.toString(), requestOptions);
 
 
@@ -185,10 +187,53 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
     } if (!url) {
       setUrlError('URL cannot be empty');
       return;
-    } if(!method) {
+    } if(!requestType) {
       setMethodError('Method cannot be empty');
       return;
     }
+
+    const formData = new FormData();
+
+    // const formData = formDataParams.map(([key, value, type]) => ({ key, value, type }));
+    // const formData = formDataParams.map(([key, value, type]) => {
+    //   if (type === 'File') {
+    //     // For file type, extract file metadata
+    //     return {key,value.name, type};
+    //   } else {
+    //     // For text type, use the value directly
+    //     return {key, value, type};
+    //   }
+    // });
+
+    formDataParams.forEach(param => {
+      // Check if param is an object or an array
+      if (typeof param === 'object') {
+          // If it's an object, extract key, value, and type
+          const { key, value, type } = param;
+          if (type === 'File') {
+              // Append the file object to the FormData
+              formData.append(key, value);
+          } else {
+              // Append text values as usual
+              formData.append(key, value);
+          }
+      } else if (Array.isArray(param)) {
+          // If it's an array, it should contain key, value, and type
+          const [key, value, type] = param;
+          if (type === 'File') {
+              // Append the file object to the FormData
+              formData.append(key, value);
+          } else {
+              // Append text values as usual
+              formData.append(key, value);
+          }
+      }
+  });
+
+    const apiheaders = headers.map(([key,value]) => ({ key, value}));
+    const apiparams = params.map(([key,value]) => ({ key, value}));
+
+    console.log(formData);
     
     try {
       const requestOptions = {
@@ -201,22 +246,22 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
           service: serviceId,
           method: requestType,
           url,
-          params,
-          headers,
+          params:apiparams,
+          headers:apiheaders,
           response,
           authType,
           authCredentials,
           requestBody: {
             type: requestBodyType,
             rawBody: requestBody,
-            formDataParams
+            formDataParams: formData
           }
         })
       };
 
       console.log(requestOptions);
   
-      const res = await fetch(URL+'/api/apis', requestOptions);
+      const res = await fetch(`${CHROME_URL}/api/apis`, requestOptions);
       const data = await res.json();
       console.log(data);
       setApi(data.api);
@@ -231,6 +276,36 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
   };
   
   const onSaveUpdate = async () => {
+    console.log(formDataParams);
+    const formData = new FormData();
+
+    formDataParams.forEach(param => {
+      // Check if param is an object or an array
+      if (typeof param === 'object') {
+          // If it's an object, extract key, value, and type
+          const { key, value, type } = param;
+          if (type === 'File') {
+              // Append the file object to the FormData
+              formData.append(key, value);
+          } else {
+              // Append text values as usual
+              formData.append(key, value);
+          }
+      } else if (Array.isArray(param)) {
+          // If it's an array, it should contain key, value, and type
+          const [key, value, type] = param;
+          if (type === 'File') {
+              // Append the file object to the FormData
+              formData.append(key, value);
+          } else {
+              // Append text values as usual
+              formData.append(key, value);
+          }
+      }
+  });
+
+  console.log(formData);
+
     console.log("save ans update");
     if (!name.trim()) {
       setNameError('Name cannot be empty');
@@ -238,7 +313,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
     } else if (!url.trim()) {
       setUrlError('URL cannot be empty');
       return;
-    }else if(!method.trim()) {
+    }else if(!requestType.trim()) {
       setMethodError('Method cannot be empty');
       return;
     }
@@ -261,12 +336,12 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
           requestBody: {
             type: requestBodyType,
             rawBody: requestBody,
-            formDataParams
+            formDataParams:formData
           }
         })
       };
   
-      const res = await fetch(`${URL}/api/apis/`, requestOptions);
+      const res = await fetch(`${CHROME_URL}/api/apis/`, requestOptions);
       const data = await res.json();
       console.log(data);
   
@@ -291,11 +366,11 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
 
 
   return (
-    <div className='container-api'>
+    <div style={{ top: "50px"}} className='container-api'>
     {  serviceId?(
-       name ? <h4>{name}</h4> : (
+       name ? <h2>{name}</h2> : (
       <div>
-        <h3>Add API</h3>
+        <h2>Add API</h2>
         <label className='label-api'>
             Name
         <input type="text" value={newName} onChange={(e) => {setNewName(e.target.value);setNameError('')}} />
@@ -333,7 +408,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
           </label>
         </div>
 
-        <div className='authContainer-api'>
+        <div className='authContainer-api' >
           <label className='label-api'>
             Authentication Type
             <select className='select-api' value={authType} onChange={handleAuthTypeChange}>
@@ -387,7 +462,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
 
         {(requestType !== 'GET' && requestType !== 'DELETE') && (
           <div className='bodyContainer-api'>
-            Body
+            <label > Body
             <Body
               requestBody={requestBody}
               setRequestBody={setRequestBody}
@@ -396,6 +471,7 @@ export default function ApiTester({api,serviceId,onDeleteApi,apiToDelete,apiDele
               formDataParams={formDataParams}
               setFormDataParams={setFormDataParams}
             />
+            </label>
             <br />
           </div>)}
 

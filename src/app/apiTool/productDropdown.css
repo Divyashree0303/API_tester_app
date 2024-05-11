@@ -8,6 +8,12 @@
     align-items: center;
     cursor: pointer;
   }
+
+  .prod-name{
+    font-size: 14px;
+    font-weight: 100;
+    margin:10px 0;
+  }
   
   .dropdown-button {
     margin-right: 10px;
@@ -21,6 +27,14 @@
   .action-button {
     margin-left: 5px;
     cursor: pointer;
+  }
+
+  .action-button.edit{
+    color: #0070ba;
+  }
+
+  .action-button.delete{
+    color:gray
   }
   
   ul {

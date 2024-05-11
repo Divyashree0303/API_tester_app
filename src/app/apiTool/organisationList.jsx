@@ -10,7 +10,7 @@ import DeleteConfirmationModal from './deleteConfModal';
 import AddOrganizationModal from './addOrg';
 import ProductDropdown from "./productDropdown"
 
-export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,apis,setApis }) {
+export default function OrganisationList ({setCollapsed,setSelectedFormApi,setServiceIdForm,apis,setApis }) {
   const [organizations, setOrganizations] = useState([]);
   const [selectedOrg, setSelectedOrg] = useState(null);
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -141,19 +141,19 @@ export default function OrganisationList ({ setSelectedFormApi,setServiceIdForm,
               <span className="dropdown-button" onClick={() => toggleDropdown(org._id)}>
                 <FontAwesomeIcon icon={selectedOrg === org._id ? faChevronDown : faChevronUp} />
               </span>
-              <h4>{org.name}</h4>
+              <h4 className='org-name'>{org.name}</h4>
               <div className="actions">
-                <span className="action-button" onClick={() => openEditModal(org)}>
+                <span className="action-button edit" onClick={() => openEditModal(org)}>
                   <FontAwesomeIcon icon={faEdit} />
                 </span>
-                <span className="action-button" onClick={() => openDeleteModal(org)}>
+                <span className="action-button delete" onClick={() => openDeleteModal(org)}>
                   <FontAwesomeIcon icon={faTrashAlt} />
                 </span>
 
               </div>
             </div>
             {selectedOrg === org._id && (
-              <ProductDropdown orgId={org._id} products={products} setProducts={setProducts} setSelectedFormApi={setSelectedFormApi} setServiceIdForm={setServiceIdForm} apis={apis} setApis={setApis} />
+              <ProductDropdown setCollapsed={setCollapsed} orgId={org._id} products={products} setProducts={setProducts} setSelectedFormApi={setSelectedFormApi} setServiceIdForm={setServiceIdForm} apis={apis} setApis={setApis} />
             )}
           </li>
         ))}

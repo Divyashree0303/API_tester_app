@@ -31,6 +31,7 @@ export default function Body({requestBody,setRequestBody,requestBodyType,setRequ
     };
 
     const handleFormDataValueChange = (index, value) => {
+      console.log(value);
         const updatedFormDataParams = [...formDataParams];
         updatedFormDataParams[index][1] = value;
         setFormDataParams(updatedFormDataParams);
@@ -103,6 +104,7 @@ export default function Body({requestBody,setRequestBody,requestBodyType,setRequ
                 placeholder=""
                 value={requestBody}
                 onChange={(e) => setRequestBody(e.target.value)}
+                style={{height:"150px",width:"100%"}}
               />
             </div>
           )}

@@ -5,6 +5,55 @@
 
   .apis{
     padding-left: 15px;
+    border-left: 1.5px solid rgb(218, 220, 224);
+  }
+
+  .service-name{
+    font-size: 14px;
+    font-weight: 100;
+    margin:10px 0;
+  }
+
+  .action-button.edit{
+    color: #0070ba;
+  }
+
+  .action-button.delete{
+    color:gray
+  }
+  .api-name{
+    font-size: 12px;
+  }
+
+  .method-side{
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: auto 10px auto 0;
+    display: inline-block;
+    font-size: 7px;
+    height: fit-content;
+    min-width: 25px;
+    text-align: center;
+  }
+
+  .POST{
+    background-color: #49cc90;
+  }
+  
+  .PUT{
+      background-color: #fca130;
+  }
+  
+  .DELETE{
+      background-color: #f93e3e;
+  }
+  .PATCH{
+      background-color: #50e3c2;
+  }
+  
+  .GET{
+      background-color: #61affe;
   }
   
   .apis li {
@@ -25,6 +74,6 @@
     background-color:  rgb(245, 247, 250);
     background-color: rgb(245, 247, 250);
     font-weight: bold;
-    border-left: 4px solid #121661;
+    border-left: 2px solid #121661;
     /* Add any additional styling for the selected API here */
   }

@@ -79,7 +79,7 @@ export default function Body() {
                         <h2>API testing portal</h2>
                     </div>
                     <p>Experience the ease of testing Fintract Global's APIs with our user-friendly portal.</p>
-                    <p><Link href='/apiTester'>Test APIs</Link></p>
+                    <p><Link href='/apiTool'>Test APIs</Link></p>
                     </div>
                 </div>
 

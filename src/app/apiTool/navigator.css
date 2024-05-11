@@ -1,7 +1,19 @@
 .navigator{
-    max-width:250px;
     border-right:1.5px solid #ddd;
     display:none;
+    position: sticky;
+    left: 0px;
+    top: 65px;
+    width: 300px;
+    height: calc(-65px + 100vh);
+    overflow-y: auto;
+    flex: 0 0 300px;
+    padding: 0px 0px 0px 20px;
+    overflow-x: hidden;
+}
+
+.navigator.main-nav{
+  display:block;
 }
 
 .collapse-bar {
@@ -14,6 +26,10 @@
     .navigator.not-collapsed {
       transition: width 0.3s ease;
       display: block; /* Add transition for smooth animation */
+    }
+
+    .navigator.main-nav{
+      display:none;
     }
   
     .collapse-bar {

@@ -8,7 +8,7 @@ import EditServiceModal from "./editServiceModal"
 import AddServiceModal from "./addService"
 import ApiTester from "../apiTester/apiTester"
 
-export default function ServiceDropdown ({ services, setServices, productId, setSelectedFormApi,setServiceIdForm,apis,setApis}){
+export default function ServiceDropdown ({setCollapsed, services, setServices, productId, setSelectedFormApi,setServiceIdForm,apis,setApis}){
 
   const [selectedServices, setSelectedServices] = useState([]);
   const [editServiceModalOpen, setEditServiceModalOpen] = useState(false);
@@ -127,12 +127,12 @@ export default function ServiceDropdown ({ services, setServices, productId, set
               <span className="dropdown-button" onClick={() => toggleServiceDropdown(service._id)}>
                 <FontAwesomeIcon icon={isDropdownOpen(service._id) ? faChevronDown : faChevronUp} />
               </span>
-              <h5>{service.name}</h5>
+              <h5 className='service-name'>{service.name}</h5>
               <div className="product-actions">
-                <span className="action-button">
+                <span className="action-button edit">
                   <FontAwesomeIcon icon={faEdit} onClick={() => openServiceEditModal(service)} />
                 </span>
-                <span className="action-button">
+                <span className="action-button delete">
                   <FontAwesomeIcon icon={faTrashAlt} onClick={() => openServiceDeleteModal(service)} />
                 </span>
               </div>
@@ -140,11 +140,11 @@ export default function ServiceDropdown ({ services, setServices, productId, set
             {isDropdownOpen(service._id) && (
               <ul className='apis'>
                 {apis[service._id] &&  apis[service._id].map(api => (
-                  <li key={api._id}  className={selectedApi === api._id ? 'selected' : ''}  onClick={() => {setSelectedFormApi(api); setServiceIdForm(service._id);setSelectedApi(api._id);}}><p>{api.name}</p></li>
+                  <li key={api._id}  className={selectedApi === api._id ? 'selected' : ''}  onClick={() => {setSelectedFormApi(api); setServiceIdForm(service._id);setSelectedApi(api._id);setCollapsed(true)}}><div style={{display:"flex",width:"fit-content"}}><div className={`method-side ${api.method}`}>{api.method}</div><p className='api-name'>{api.name}</p></div></li>
                 ))}
 
                 
-                  <div style={{ display: "flex", color: "#0070ba", cursor: "pointer" }} onClick={() => {console.log("add api") ;setSelectedFormApi(null); setServiceIdForm(service._id);setSelectedApi(null)}}>
+                  <div  style={{ display: "flex", color: "#0070ba", cursor: "pointer", marginLeft:"10px",fontSize:"12px"}} onClick={() => {console.log("add api") ;setSelectedFormApi(null); setServiceIdForm(service._id);setSelectedApi(null)}}>
                     <div><FontAwesomeIcon icon={faPlus} /></div>
                     <div style={{ marginLeft: "5px" }}>Add API</div>
                   </div>
@@ -160,7 +160,7 @@ export default function ServiceDropdown ({ services, setServices, productId, set
         <li>
           <div style={{ display: "flex", color: "#0070ba", cursor: "pointer" }} onClick={handleAddService}>
             <div><FontAwesomeIcon icon={faPlus} /></div>
-            <div style={{ marginLeft: "5px" }}>Add service</div>
+            <div style={{ marginLeft: "5px" ,fontSize:"14px"}}>Add service</div>
           </div>
 
           <AddServiceModal isOpen={displayAddServiceModal} setIsOpen={setDisplayAddServiceModal} onUpdate={onUpdateServiceName} productId={productId} />

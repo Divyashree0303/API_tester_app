@@ -7,7 +7,7 @@ import EditProductModal from "./editProductModal"
 import AddProductModal from "./addProduct"
 import ServiceDropdown from './servicesDropdown';
 
-export default function ProductDropdown({ products, setProducts, orgId,setSelectedFormApi,setServiceIdForm,apis,setApis }){
+export default function ProductDropdown({ setCollapsed,products, setProducts, orgId,setSelectedFormApi,setServiceIdForm,apis,setApis }){
 
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [editProdModalOpen, setEditProdModalOpen] = useState(false);
@@ -121,25 +121,25 @@ const toggleProductDropdown = (productId) => {
             <span className="dropdown-button" onClick={() => toggleProductDropdown(product._id)}>
                 <FontAwesomeIcon icon={isDropdownOpen(product._id) ? faChevronDown : faChevronUp} />
               </span>
-              <h5>{product.name}</h5>
+              <h5 className='prod-name'>{product.name}</h5>
               <div className="product-actions">
-                <span className="action-button">
+                <span className="action-button edit">
                   <FontAwesomeIcon icon={faEdit} onClick={() => openProdEditModal(product)} />
                 </span>
-                <span className="action-button">
+                <span className="action-button delete">
                   <FontAwesomeIcon icon={faTrashAlt} onClick={() => openProdDeleteModal(product)} />
                 </span>
               </div>
             </div>
             {isDropdownOpen(product._id) && (
-              <ServiceDropdown productId={product._id} services={services[product._id] || []} setServices={setServices} setSelectedFormApi={setSelectedFormApi} setServiceIdForm={setServiceIdForm} apis={apis} setApis={setApis} />
+              <ServiceDropdown setCollapsed={setCollapsed} productId={product._id} services={services[product._id] || []} setServices={setServices} setSelectedFormApi={setSelectedFormApi} setServiceIdForm={setServiceIdForm} apis={apis} setApis={setApis} />
             )}
           </li>
         ))}
         <li>
           <div style={{ display: "flex", color: "#0070ba", cursor: "pointer" }} onClick={handleAddProduct}>
             <div><FontAwesomeIcon icon={faPlus} /></div>
-            <div style={{ marginLeft: "5px" }}>Add product</div>
+            <div style={{ marginLeft: "5px",fontSize:"14px" }}>Add product</div>
           </div>
 
           <AddProductModal isOpen={displayAddProductModal} setIsOpen={setDisplayAddProductModal} onUpdate={onUpdateProductName} orgId={orgId}/>

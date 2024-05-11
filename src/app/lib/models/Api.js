@@ -26,21 +26,21 @@ const apiSchema = new mongoose.Schema({
       enum: ['raw', 'formdata']
     },
     formDataParams: [
-      {
-        key: {
-          type: String,
-          required: true
-        },
-        value: {
-          type: String,
-          required: true
-        },
-        type: {
-          type: String,
-          enum: ['Text', 'File'],
-          required: true
-        }
-      }
+          {
+              key: {
+                  type: String,
+                  required: true
+              },
+              value: {
+                  type: mongoose.Schema.Types.Mixed,
+                  required: true
+              },
+              type: {
+                  type: String,
+                  enum: ['Text', 'File'],
+              }
+          }
+     
     ],
     rawBody: {
       type: String

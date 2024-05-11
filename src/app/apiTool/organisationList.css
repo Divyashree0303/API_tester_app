@@ -2,7 +2,7 @@
 
 .sidebar {
     /* background-color: #f4f4f4; */
-    padding: 20px;
+    padding: 40px 20px;
   }
 
   .sidebar>ul{
@@ -24,6 +24,19 @@
   .action-button {
     margin-right: 10px;
     cursor: pointer;
+  }
+
+  .action-button.edit{
+    color: #0070ba;
+  }
+
+  .action-button.delete{
+    color:gray
+  }
+  .org-name{
+    font-size: 16px;
+    font-weight: 100;
+    margin:10px 0;
   }
 
   
