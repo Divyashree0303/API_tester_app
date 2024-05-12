@@ -1,7 +1,6 @@
 .navigator{
     border-right:1.5px solid #ddd;
     display:none;
-    position: sticky;
     left: 0px;
     top: 65px;
     width: 300px;
